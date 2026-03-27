@@ -55,7 +55,7 @@ export default function PortfolioSection() {
   const [hovered, setHovered] = useState(false)
 
   const sectionRef = useRef<HTMLElement>(null)
-  const timerRef   = useRef<ReturnType<typeof setTimeout>>()
+  const timerRef   = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -73,7 +73,7 @@ export default function PortfolioSection() {
     setPrev(active)
     setActive(clamped)
     setAnim(true)
-    clearTimeout(timerRef.current)
+    if (timerRef.current) clearTimeout(timerRef.current)
     timerRef.current = setTimeout(() => { setPrev(null); setAnim(false) }, 900)
   }, [active, animating])
 
@@ -89,7 +89,9 @@ export default function PortfolioSection() {
     return () => window.removeEventListener('keydown', fn)
   }, [active, animating])
 
-  useEffect(() => () => clearTimeout(timerRef.current), [])
+  useEffect(() => () => {
+    if (timerRef.current) clearTimeout(timerRef.current)
+  }, [])
 
   const cur = PROJECTS[active]
 
