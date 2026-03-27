@@ -2,7 +2,8 @@
 
 /* H1 Styling */
 h1 {
-  font-family: 'Kento', sans-serif;
+  font-family: 'Kento', 
+Verdana, sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
   margin: 1rem 0;

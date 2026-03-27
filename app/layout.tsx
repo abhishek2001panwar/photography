@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CursorGlow from "./components/CursorGlow";
+import Footer from "./components/footer";
 
 
 
@@ -27,7 +28,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className=""> <CursorGlow />{children}</body>
+      <body className=""> <CursorGlow />{children}
+      <Footer />
+      </body>
     </html>
   );
 }

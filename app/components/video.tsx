@@ -94,7 +94,7 @@ export default function VideoSection() {
           onClick={toggleMute}
           className="absolute bottom-6 right-6 z-20 text-white text-sm tracking-widest bg-black/40 px-4 py-2 rounded-full backdrop-blur-md hover:bg-black/60 transition"
         >
-          {isMuted ? 'UNMUTE' : 'MUTE'}
+            {isMuted ? 'UNMUTE' : 'MUTE'}
         </button>
       </div>
     </div>

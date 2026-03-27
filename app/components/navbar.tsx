@@ -187,10 +187,10 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
           <div className="flex-1 flex justify-center">
             <a
               href="#home"
-              className="font-display text-[1.6rem] md:text-[3rem] tracking-[0.38em] font-light select-none"
+              className="font-display text-[1.6rem] md:text-[2rem] tracking-[0.1em] font-light select-none"
               style={{ color: t.navbarText }}
             >
-              ARCCA
+              PHOTOGRAPHY
             </a>
           </div>
 
@@ -234,7 +234,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   onMouseEnter={() => setHoveredLink(link.label)}
                   onMouseLeave={() => setHoveredLink(null)}
                   onClick={() => setMenuOpen(false)}
-                  className={`nav-item link-ul font-display font-light tracking-[0.04em] text-4xl md:text-5xl lg:text-[3.4rem] py-3 md:py-[14px] ${menuOpen ? 'show' : ''}`}
+                  className={`nav-item link-ul font-display font-meidum tracking-[0.02em] text-4xl md:text-5xl lg:text-[3.4rem] py-3 md:py-[14px] ${menuOpen ? 'show' : ''}`}
                   style={{
                     color: hoveredLink && hoveredLink !== link.label ? t.leftDimmed : t.leftText,
                     transitionDelay: menuOpen ? `${i * 60 + 90}ms` : '0ms',

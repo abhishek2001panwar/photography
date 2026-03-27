@@ -5,9 +5,11 @@ import { useRef } from 'react'
 export default function Button({
   children,
   variant = 'filled',
+  className = '',
 }: {
   children: React.ReactNode
   variant?: 'filled' | 'outline'
+    className?: string
 }) {
   const ref = useRef<HTMLButtonElement>(null)
 
@@ -30,15 +32,19 @@ export default function Button({
   return (
     <button
       ref={ref}
+
       onMouseMove={handleMouseMove}
       onMouseLeave={handleLeave}
+
       className={`relative px-7 py-3 rounded-full text-xs tracking-[0.25em] uppercase transition duration-300 ${
         variant === 'filled'
           ? 'bg-[#2a1f14] text-white'
           : 'border border-[#2a1f14]/30 text-[#2a1f14]'
-      }`}
+      } ${className}`}
     >
-      {children}
+     <p>
+         {children}
+     </p>
     </button>
   )
 }
