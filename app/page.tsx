@@ -8,6 +8,8 @@ import Featured from './components/featured'
 import About2 from './components/about2'
 import ContactSection from './components/contact'
 import PremiumContact from './components/contact'
+import CTASection from './components/cta'
+import PhotoSection from './components/PhotoSection'
 
 function page() {
   return (
@@ -15,8 +17,10 @@ function page() {
       <Navbar theme="light" />
       <HeroSection />
       <AboutSection />
+      <PhotoSection />
       <VideoSection />
       <PortfolioSection />
+      <CTASection />
       <Featured />
       <About2 />
       <PremiumContact />

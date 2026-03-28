@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 const PremiumContact = () => {
@@ -117,6 +118,12 @@ const PremiumContact = () => {
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white px-8 py-3 rounded-full border border-black/5 shadow-sm hidden md:flex items-center space-x-8">
          <span className="text-[9px] font-bold tracking-[0.2em] uppercase cursor-pointer hover:opacity-50">Privacy</span>
          <div className="h-1 w-1 bg-black rounded-full opacity-20"></div>
+        <button 
+         
+          className="text-[9px] font-bold tracking-[0.2em] uppercase cursor-pointer hover:opacity-50"
+        >
+          Close
+        </button>
          <span className="text-[9px] font-bold tracking-[0.2em] uppercase">© 2026 Arcca Group</span>
       </div>
     </section>

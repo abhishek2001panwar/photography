@@ -175,7 +175,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
           {/* Left */}
           <div className="flex-1 flex items-center">
             <a
-              href="#portfolio"
+              href="/portfolio"
               className="hidden md:inline-flex items-center rounded-full px-5 py-[7px] text-[11px] tracking-[0.22em] font-body transition-all duration-300"
               style={{ border: `1px solid ${t.navbarPillBorder}`, color: t.navbarPillText }}
             >
@@ -186,8 +186,8 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
           {/* Center – Logo */}
           <div className="flex-1 flex justify-center">
             <a
-              href="#home"
-              className="font-display text-[1.6rem] md:text-[2rem] tracking-[0.1em] font-light select-none"
+              href="/"
+              className=" text-[1.6rem] md:text-[2rem] tracking-[0.1em]  select-none"
               style={{ color: t.navbarText }}
             >
               PHOTOGRAPHY

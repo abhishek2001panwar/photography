@@ -207,7 +207,7 @@ export default function PortfolioSection() {
               style={{ transitionDelay: '60ms' }}
             >
               <div className={`line-reveal h-px bg-[#8b6840] ${inView ? 'open' : ''}`} />
-              <span className="font-body text-[9px] tracking-[0.35em] text-[#8b6840] uppercase">Portfolio</span>
+              <span className=" text-[9px] tracking-[0.35em] text-[#8b6840] uppercase">Portfolio</span>
             </div>
 
             {/* Heading */}
@@ -349,7 +349,7 @@ export default function PortfolioSection() {
               <div>
                 <p
                   key={`cat-${active}`}
-                  className="font-body text-[9px] tracking-[0.35em] text-[#c9a96e] uppercase mb-3 caption-enter"
+                  className=" text-[9px] tracking-[0.35em] text-[#c9a96e] uppercase mb-3 caption-enter"
                 >
                   {cur.location}
                 </p>
