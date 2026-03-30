@@ -179,7 +179,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
 
       {/* ══════════════  NAVBAR  ══════════════ */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 h-16 sm:h-[64px] md:h-[72px] font-body ${visible ? 'nav-visible' : 'nav-hidden'}`}
+        className={`fixed top-0 left-0 right-0 z-50 h-16 sm:h-[64px] md:h-[72px] font-button-custom ${visible ? 'nav-visible' : 'nav-hidden'}`}
         style={navStyle}
       >
         <div className="max-w-screen-2xl mx-auto h-full px-3 sm:px-5 md:px-10 flex items-center justify-between gap-2 sm:gap-4">
@@ -188,7 +188,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
           <div className="flex-1 flex items-center">
             <a
               href="/portfolio"
-              className="hidden lg:inline-flex items-center rounded-full px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-[7px] text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.22em] font-body transition-all duration-300"
+              className="hidden lg:inline-flex items-center rounded-full px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-[7px] text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.22em] font-button-custom transition-all duration-300"
               style={{ border: `1px solid ${t.navbarPillBorder}`, color: t.navbarPillText }}
             >
               OUR PORTFOLIO
@@ -199,8 +199,8 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
           <div className="flex-1 flex justify-center">
             <a
               href="/"
-              className="font-body text-[1.1rem] sm:text-[1.4rem] md:text-[1.6rem] lg:text-[2rem] tracking-[0.1em] select-none"
-              style={{ color: t.navbarText }}
+              className=" text-[1.1rem] sm:text-[1.4rem] md:text-[1.6rem] lg:text-[2rem] tracking-[0.1em] select-none"
+              style={{ color: t.navbarText , fontFamily: "" }}
             >
               PHOTOGRAPHY
             </a>
@@ -263,7 +263,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
             ))}
           </nav>
 
-          <div className="px-4 sm:px-8 md:px-14 pb-6 sm:pb-8 text-[8px] sm:text-[9px] tracking-[0.3em] font-body" style={{ color: t.leftFooter }}>
+          <div className="px-4 sm:px-8 md:px-14 pb-6 sm:pb-8 text-[8px] sm:text-[9px] tracking-[0.3em] font-button-custom" style={{ color: t.leftFooter }}>
             © 2025 ARCCA
           </div>
         </div>
@@ -283,7 +283,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
             </span>
             <button
               onClick={() => setMenuOpen(false)}
-              className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.28em] font-body transition-colors duration-200 ml-auto"
+              className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.28em] font-button-custom transition-colors duration-200 ml-auto"
               style={{ color: t.rightClose }}
               onMouseEnter={e => (e.currentTarget.style.color = t.rightCloseHover)}
               onMouseLeave={e => (e.currentTarget.style.color = t.rightClose)}
@@ -302,7 +302,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
               >
                 ARCCA
               </p>
-              <p className="mt-0.5 sm:mt-1 text-[8px] sm:text-[9px] tracking-[0.22em] font-body" style={{ color: t.rightLabel }}>®</p>
+              <p className="mt-0.5 sm:mt-1 text-[8px] sm:text-[9px] tracking-[0.22em] font-button-custom" style={{ color: t.rightLabel }}>®</p>
             </div>
 
             {/* Contact grid */}
@@ -327,10 +327,10 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   label: 'ADDRESS',
                   content: (
                     <>
-                      <p className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.1em] leading-relaxed font-body" style={{ color: t.rightText }}>
+                      <p className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.1em] leading-relaxed font-body-custom" style={{ color: t.rightText }}>
                         {CONTACT_INFO.address}
                       </p>
-                      <p className="mt-1.5 sm:mt-2 md:mt-2.5 text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.1em] font-body" style={{ color: t.rightMuted }}>
+                      <p className="mt-1.5 sm:mt-2 md:mt-2.5 text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.1em] font-body-custom" style={{ color: t.rightMuted }}>
                         {CONTACT_INFO.hours}
                       </p>
                     </>
@@ -371,7 +371,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                 },
               ].map(({ label, content }) => (
                 <div key={label}>
-                  <p className="text-[9px] tracking-[0.32em] mb-2.5 font-body" style={{ color: t.rightLabel }}>
+                  <p className="text-[9px] tracking-[0.32em] mb-2.5 font-button-custom" style={{ color: t.rightLabel }}>
                     {label}
                   </p>
                   {content}
@@ -386,14 +386,14 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
               <div className="flex justify-between items-center">
                 <a
                   href="#"
-                  className="text-[9px] tracking-[0.25em] font-body transition-colors duration-200"
+                  className="text-[9px] tracking-[0.25em] font-button-custom transition-colors duration-200"
                   style={{ color: t.rightMuted }}
                   onMouseEnter={e => (e.currentTarget.style.color = t.rightLabel)}
                   onMouseLeave={e => (e.currentTarget.style.color = t.rightMuted)}
                 >
                   PRIVACY POLICY
                 </a>
-                <p className="text-[9px] tracking-[0.2em] font-body" style={{ color: t.rightMuted }}>
+                <p className="text-[9px] tracking-[0.2em] font-body-custom" style={{ color: t.rightMuted }}>
                   © 2025 ARCCA
                 </p>
               </div>

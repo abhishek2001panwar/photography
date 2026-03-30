@@ -1,30 +1,124 @@
 @import "tailwindcss";
 
+/* Custom Font Face Declarations */
+@font-face {
+  font-family: 'CustomHeading';
+  src: url('/fonts/2225bc2ce471eb06-s.p.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CustomSubHeading';
+  src: url('/fonts/0c40407b2bc5a411-s.p.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CustomBody';
+  src: url('/fonts/56da557e531d1081-s.p.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CustomButton';
+  src: url('/fonts/59e3759d595784e8-s.p.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CustomAccent';
+  src: url('/fonts/b30bae5ff23529d7-s.p.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tailwind Utility Classes for Custom Fonts */
+@layer utilities {
+  .font-heading {
+    font-family: 'CustomHeading';
+  }
+
+  .font-subheading {
+    font-family: 'CustomSubHeading';
+  }
+
+  .font-body-custom {
+    font-family: 'CustomBody';
+  }
+
+  .font-button-custom {
+    font-family: 'CustomButton';
+  }
+
+  .font-accent {
+    font-family: 'CustomAccent';
+  }
+}
+
 /* H1 Styling */
 h1 {
-  font-family: 'Kento', 
-Verdana, sans-serif;
-  font-size: 2.5rem;
-  font-weight: 500;
+  font-family: 'CustomHeading';
+  font-size: 2rem;
+  font-weight: 400;
   margin: 1rem 0;
 }
 
 /* H2 Styling */
 h2 {
-  font-family: 'Kento', sans-serif;
-  font-size: 2rem;
-  font-weight: 500;
+  font-family: 'CustomSubHeading';
+  font-size: 1.2rem;
+  font-weight: 400;
   margin: 1rem 0;
+}
+
+/* H3 Styling */
+h3 {
+  font-family: 'CustomSubHeading';
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0.75rem 0;
 }
 
 /* Paragraph Styling */
 p {
-  font-family: 'EB Garamond', 'Times New Roman', sans-serif;
-  font-size: 1.4rem;
+  font-family: 'CustomBody';
+  font-size: 1rem;
   line-height: 1.6;
   margin: 0.5rem 0;
 }
 
+/* Button Styling */
+button {
+  font-family: 'CustomButton';
+  font-weight: 400;
+}
+
+/* Span Styling (for accents) */
+span {
+  font-family: inherit;
+}
+
+.talk-pill {
+  font-family: 'CustomButton', sans-serif;
+}
+
+/* Apply custom fonts globally */
+body, html {
+  font-family: 'CustomBody', 'Times New Roman', sans-serif;
+}
+
+*  {
+  font-family: inherit;
+}
 
 ::-webkit-scrollbar {
   width: 1px;

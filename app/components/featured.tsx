@@ -48,16 +48,16 @@ export default function Featured() {
           {/* Content */}
           <div className="relative z-10 h-full flex items-end justify-between px-4 sm:px-6 md:px-12 lg:px-16 pb-8 sm:pb-12 md:pb-16">
             <div className="w-full max-w-2xl text-white">
-              <h2 className="text-white font-light leading-[0.9] tracking-[-0.02em] mb-3 sm:mb-4 md:mb-6">
-                <span className="block text-[clamp(2rem,8vw,4.5rem)] sm:text-[clamp(2.5rem,8vw,5rem)]">
+              <h2 className="font-subheading text-white font-light leading-[0.9] tracking-[-0.02em] mb-3 sm:mb-4 md:mb-6">
+                <span className="block text-[clamp(2rem,8vw,4.5rem)] sm:text-[clamp(2rem,7vw,5rem)]">
                   {item.title.split(" ")[0]}
                 </span>
 
-                <span className="block text-[clamp(2rem,8vw,4.5rem)] sm:text-[clamp(2.5rem,8vw,5rem)]">
+                <span className="block text-[clamp(2rem,8vw,4.5rem)] sm:text-[clamp(2rem,7vw,5rem)]">
                   {item.title.split(" ")[1]}
                 </span>
               </h2>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 leading-relaxed max-w-lg">
+              <p className="font-body-custom text-sm sm:text-base md:text-lg lg:text-xl text-white/80 leading-relaxed max-w-lg">
                 {item.desc}
               </p>
             </div>

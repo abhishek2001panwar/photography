@@ -78,7 +78,7 @@ export default function CTASection() {
           outline: none;
           width: 100%;
           transition: border-color 0.3s ease;
-          font-family: 'Didact Gothic', sans-serif;
+          font-family: 'CustomButton', sans-serif;
         }
         .email-line:focus { border-bottom-color: #2a1f14; }
         .email-line::placeholder { color: rgba(42,31,20,0.35); }
@@ -99,7 +99,7 @@ export default function CTASection() {
           display: inline-flex; align-items: center;
           background: #2a1f14; color: #f0ece6;
           border-radius: 999px;
-          font-family: 'Didact Gothic', sans-serif;
+          font-family: 'CustomButton', sans-serif;
           font-size: 10px; letter-spacing: 0.28em;
           text-transform: uppercase;
           padding: 14px 28px;
@@ -137,11 +137,11 @@ export default function CTASection() {
                 className={`hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 max-w-[240px] fade-up ${inView ? 'show' : ''}`}
                 style={{ transitionDelay: '400ms' }}
               >
-                <p className="font-body text-[#3d2c1e] text-[0.72rem] leading-[1.9] mb-3">
+                <p className="font-body-custom text-[#3d2c1e] text-[0.72rem] leading-[1.9] mb-3">
                   At Arcca Group, every project is conceived as a creation that transcends architecture — a space designed to{' '}
-                  <strong className="font-body" style={{ fontWeight: 400, color: '#1e140a' }}>elevate everyday life</strong> through:
+                  <strong className="font-body-custom" style={{ fontWeight: 400, color: '#1e140a' }}>elevate everyday life</strong> through:
                 </p>
-                <p className="font-body text-[#3d2c1e] text-[0.72rem] leading-[1.9]">
+                <p className="font-body-custom text-[#3d2c1e] text-[0.72rem] leading-[1.9]">
                   luxury, exceptional craftsmanship,<br />and thoughtful design.
                 </p>
               </div>
@@ -150,7 +150,7 @@ export default function CTASection() {
               <div className="flex-1 flex justify-center lg:justify-start lg:pl-[30%]">
                 <div className="word-mask">
                   <span
-                    className={`word-inner font-display font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
+                    className={`word-inner  font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
                     style={{
                       fontSize: 'clamp(4rem, 11vw, 13rem)',
                       letterSpacing: '-0.02em',
@@ -187,7 +187,7 @@ export default function CTASection() {
 
               <div className="word-mask">
                 <span
-                  className={`word-inner font-display font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
+                  className={`word-inner  font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
                   style={{
                     fontSize: 'clamp(4rem, 11vw, 13rem)',
                     letterSpacing: '-0.02em',
@@ -222,7 +222,7 @@ export default function CTASection() {
 
               <div className="word-mask">
                 <span
-                  className={`word-inner font-display font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
+                  className={`word-inner  font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
                   style={{
                     fontSize: 'clamp(4rem, 11vw, 13rem)',
                     letterSpacing: '-0.02em',
@@ -238,7 +238,7 @@ export default function CTASection() {
             <div className="flex items-end justify-start md:justify-center gap-6 flex-wrap md:flex-nowrap">
               <div className="word-mask">
                 <span
-                  className={`word-inner font-display font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
+                  className={`word-inner  font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
                   style={{
                     fontSize: 'clamp(4rem, 11vw, 13rem)',
                     letterSpacing: '-0.02em',
@@ -282,9 +282,9 @@ export default function CTASection() {
             className={`lg:hidden fade-up mt-10 ${inView ? 'show' : ''}`}
             style={{ transitionDelay: '680ms' }}
           >
-            <p className="font-body text-[#3d2c1e] text-sm leading-[1.9] max-w-sm">
+            <p className="font-body-custom text-[#3d2c1e] text-sm leading-[1.9] max-w-sm">
               At Arcca Group, every project is conceived as a creation that transcends architecture — a space designed to{' '}
-              <strong className="font-body" style={{ fontWeight: 400, color: '#1e140a' }}>elevate everyday life</strong>{' '}
+              <strong className="font-body-custom" style={{ fontWeight: 400, color: '#1e140a' }}>elevate everyday life</strong>{' '}
               through luxury, exceptional craftsmanship, and thoughtful design.
             </p>
           </div>

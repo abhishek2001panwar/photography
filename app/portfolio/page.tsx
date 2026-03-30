@@ -187,7 +187,7 @@ export default function ProjectsPage() {
 
         /* Filter pills */
         .f-pill {
-          font-family:'Didact Gothic',sans-serif;
+          font-family:'CustomButton',sans-serif;
           font-size:9px; letter-spacing:0.28em;
           padding:7px 18px; border-radius:999px;
           border:1px solid;
@@ -201,7 +201,7 @@ export default function ProjectsPage() {
 
         /* Section divider text */
         .section-label {
-          font-family:'Didact Gothic',sans-serif;
+          font-family:'CustomButton',sans-serif;
           font-size:9px; letter-spacing:0.35em;
           text-transform:uppercase;
         }
@@ -261,7 +261,7 @@ export default function ProjectsPage() {
           >
             {cur.title}
           </h1>
-          <p key={`loc-${active}`} className="cap-in font-body text-[rgba(240,236,230,0.65)] tracking-[0.25em] text-sm mt-4">
+          <p key={`loc-${active}`} className="cap-in font-body-custom text-[rgba(240,236,230,0.65)] tracking-[0.25em] text-sm mt-4">
             {cur.location}
           </p>
         </div>
@@ -283,7 +283,7 @@ export default function ProjectsPage() {
             {/* View project CTA */}
             <a
               href={cur.href}
-              className="font-body text-[10px] tracking-[0.32em] uppercase text-[#f0ece6] border border-[rgba(240,236,230,0.3)] px-6 py-3 hover:bg-[rgba(240,236,230,0.1)] transition-all duration-300"
+              className="font-body-custom text-[10px] tracking-[0.32em] uppercase text-[#f0ece6] border border-[rgba(240,236,230,0.3)] px-6 py-3 hover:bg-[rgba(240,236,230,0.1)] transition-all duration-300"
             >
               View Project
             </a>
@@ -319,12 +319,12 @@ export default function ProjectsPage() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-8">
           <div>
             <p className="section-label text-[#8b6840] mb-4">All Projects</p>
-            <h2
-              className="font-display font-light text-[#1e140a] leading-[0.92]"
-              style={{ fontSize: 'clamp(2.8rem,5vw,5rem)', letterSpacing:'-0.01em' }}
+            <h1
+              className=" font-light text-[#1e140a] "
+              style={{ fontSize: 'clamp(2rem,3vw,5rem)', letterSpacing:'' }}
             >
               Our Portfolio
-            </h2>
+            </h1>
           </div>
 
           {/* Filter pills */}
@@ -366,7 +366,7 @@ export default function ProjectsPage() {
               {/* Status badge — top left */}
               <div className="absolute top-4 left-4 z-10">
                 <span
-                  className="font-body text-[8px] tracking-[0.28em] uppercase px-3 py-1.5"
+                  className="font-body-custom text-[8px] tracking-[0.28em] uppercase px-3 py-1.5"
                   style={{
                     background: 'rgba(14,9,4,0.55)',
                     backdropFilter: 'blur(6px)',
@@ -379,7 +379,7 @@ export default function ProjectsPage() {
 
               {/* Info overlay */}
               <div className="card-info z-10">
-                <p className="font-body text-[9px] tracking-[0.28em] uppercase mb-2" style={{ color: STATUS_COLORS[project.status] }}>
+                <p className="font-body-custom text-[9px] tracking-[0.28em] uppercase mb-2" style={{ color: STATUS_COLORS[project.status] }}>
                   {project.location}
                 </p>
                 <div className="flex items-end justify-between">
@@ -404,13 +404,13 @@ export default function ProjectsPage() {
         {filtered.length === 0 && (
           <div className="flex flex-col items-center justify-center py-32 text-center">
             <p className="font-display text-[#2a1f14] text-3xl font-light mb-3">No projects yet</p>
-            <p className="font-body text-[10px] tracking-[0.25em] text-[#8b6840] uppercase">Check back soon</p>
+            <p className="font-body-custom text-[10px] tracking-[0.25em] text-[#8b6840] uppercase">Check back soon</p>
           </div>
         )}
 
         {/* Bottom count */}
         <div className="mt-16 flex items-center justify-between">
-          <p className="font-body text-[10px] tracking-[0.25em] text-[#8b6840] uppercase">
+          <p className="font-body-custom text-[10px] tracking-[0.25em] text-[#8b6840] uppercase">
             Showing {filtered.length} of {PROJECTS.length} projects
           </p>
           <div className="h-px flex-1 bg-[#2a1f1415] mx-8" />

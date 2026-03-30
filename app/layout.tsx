@@ -22,12 +22,6 @@ export default function RootLayout({
       lang="en"
       className={` antialiased`}
     >
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Kento&family=EB+Garamond:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className=""> <CursorGlow />{children}
       <Footer />
       </body>

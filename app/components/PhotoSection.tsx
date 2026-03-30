@@ -29,9 +29,8 @@ export default function PhotoSection() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Didact+Gothic&display=swap');
-        .font-display { font-family: 'Cormorant Garamond', serif; }
-        .font-body    { font-family: 'Didact Gothic', sans-serif; }
+        .font-display { font-family: 'CustomHeading', sans-serif; }
+        .font-body    { font-family: 'CustomBody', sans-serif; }
 
         /* Grain */
         .pg-grain::before {

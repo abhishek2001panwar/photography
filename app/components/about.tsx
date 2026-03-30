@@ -75,29 +75,29 @@ export default function AboutSection() {
       >
 
         {/* LEFT */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center px-4 sm:px-6 md:px-14 lg:px-24 py-12 sm:py-16 md:py-20 lg:py-0 space-y-6 md:space-y-8 min-h-auto md:min-h-screen">
+        <div className="w-full md:w-1/2 flex flex-col justify-center px-3 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-6 sm:py-10 md:py-14 lg:py-0 space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8 min-h-auto md:min-h-screen">
 
-          <p className={`text-[10px] sm:text-xs tracking-[0.3em] uppercase text-[#8b6840] ${textInView ? 'line-visible' : 'line-hidden'}`}>
+          <p className={`text-[7px] sm:text-[8px] md:text-xs lg:text-sm tracking-[0.3em] uppercase text-[#8b6840] ${textInView ? 'line-visible' : 'line-hidden'}`}>
             Why Florida?
           </p>
 
-          <h2 className="font-light text-[#1e140a] leading-[1.05]">
+          <h1 className="font-subheading font-light text-[#1e140a] leading-[1.05] ">
             {["WE SHAPE", "THE ESSENCE", "OF LIVING"].map((line, i) => (
               <div
                 key={i}
                 className={`${textInView ? 'line-visible' : 'line-hidden'}`}
                 style={{
                   transitionDelay: `${i * 120 + 100}ms`,
-                  fontSize: 'clamp(1.75rem, 6vw, 3.5rem)',
+                  fontSize: 'clamp(1.2rem, 4.5vw, 3rem)',
                 }}
               >
                 {line}
               </div>
             ))}
-          </h2>
+          </h1>
 
           <p
-            className={`text-sm sm:text-base text-[#4a3728] leading-[1.8] max-w-[100%] md:max-w-[420px] ${
+            className={`font-body-custom text-xs sm:text-sm md:text-base lg:text-lg text-[#4a3728] leading-[1.6] sm:leading-[1.7] md:leading-[1.8] max-w-full md:max-w-[420px] lg:max-w-[500px] ${
               textInView ? 'line-visible' : 'line-hidden'
             }`}
             style={{ transitionDelay: '400ms' }}
@@ -108,7 +108,7 @@ export default function AboutSection() {
           </p>
 
           <div
-            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 md:mt-8 ${
+            className={`flex flex-row gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-5 md:mt-6 lg:mt-8 ${
               textInView ? 'line-visible' : 'line-hidden'
             }`}
             style={{ transitionDelay: '500ms' }}
@@ -119,7 +119,7 @@ export default function AboutSection() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="relative w-full md:w-1/2 h-[300px] sm:h-[380px] md:h-[500px] lg:h-[80vh] xl:h-screen overflow-hidden">
+        <div className="relative w-full md:w-1/2 h-[220px] sm:h-[300px] md:h-[400px] lg:h-[600px] xl:h-screen overflow-hidden">
 
           <div
             ref={imageRef}
@@ -131,6 +131,7 @@ export default function AboutSection() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
 
             {/* subtle gradient */}
