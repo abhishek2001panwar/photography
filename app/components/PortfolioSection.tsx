@@ -215,14 +215,7 @@ export default function PortfolioSection() {
             </div>
 
             {/* Heading */}
-            <h2
-              className={`fade-up  font-light text-[#1e140a] leading-[0.92] mt-4 md:mt-0 ${inView ? 'show' : ''}`}
-              style={{ fontSize: 'clamp(1.5rem,4vw,3rem)', letterSpacing:'-0.01em', transitionDelay: '100ms' }}
-            >
-              DESIGN,<br />
-              <em className="not-italic" style={{ fontStyle:'italic' }}>Architecture</em><br />
-              &amp; Interiors
-            </h2>
+           
           </div>
 
           {/* Bottom block — project info */}
@@ -336,16 +329,7 @@ export default function PortfolioSection() {
           />
 
           {/* ── Top-right: category tag ── */}
-          <div className="absolute top-3 sm:top-4 md:top-8 right-3 sm:right-4 md:right-8 z-20">
-            <div
-              className="px-3 sm:px-4 py-1.5 sm:py-2 border border-[rgba(240,236,230,0.25)] backdrop-blur-md"
-              style={{ background: 'rgba(14,9,4,0.45)' }}
-            >
-              <p className="font-body text-[7px] sm:text-[8px] md:text-[9px] tracking-[0.32em] text-[#f0ece6] uppercase">
-                {cur.category}
-              </p>
-            </div>
-          </div>
+         
 
           {/* ── Bottom caption (hidden on mobile, absolute on desktop) ── */}
           <div className="hidden md:block absolute bottom-0 left-0 right-0 z-20 px-12 pb-12">
@@ -355,14 +339,14 @@ export default function PortfolioSection() {
               <div>
                 <p
                   key={`cat-${active}`}
-                  className="text-[9px] tracking-[0.35em] text-[#c9a96e] uppercase mb-3 caption-enter"
+                  className="font-body text-[6px] tracking-[0.35em] text-[#c9a96e] uppercase mb-3 caption-enter"
                 >
                   {cur.location}
                 </p>
                 <h3
                   key={`title-${active}`}
-                  className="font-display font-light text-[#f0ece6] leading-none caption-enter"
-                  style={{ fontSize: 'clamp(2.4rem, 4vw, 4.2rem)' }}
+                  className="font-body font-light text-[#f0ece6] leading-none caption-enter"
+                  style={{ fontSize: 'clamp(2.4rem, 4vw, 4rem)' }}
                 >
                   {cur.title}
                 </h3>

@@ -3,6 +3,7 @@ import React from 'react';
 import Button from './Button';
 
 const PremiumContact = () => {
+
   return (
     <section className="min-h-screen bg-[#F5F4EB] text-black font-sans selection:bg-black selection:text-white flex items-center justify-center p-6 md:p-12 lg:p-20">
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
@@ -117,7 +118,7 @@ const PremiumContact = () => {
       </div>
 
       {/* Modern Floating Footer */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white px-8 py-3 rounded-full border border-black/5 shadow-sm hidden md:flex items-center space-x-8">
+      {/* <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white px-8 py-3 rounded-full border border-black/5 shadow-sm hidden md:flex items-center space-x-8">
          <span className="text-[9px] font-bold tracking-[0.2em] uppercase cursor-pointer hover:opacity-50">Privacy</span>
          <div className="h-1 w-1 bg-black rounded-full opacity-20"></div>
         <button 
@@ -127,7 +128,7 @@ const PremiumContact = () => {
           x
         </button>
          <span className="text-[9px] font-bold tracking-[0.2em] uppercase">© 2026 Arcca Group</span>
-      </div>
+      </div> */}
     </section>
   );
 };

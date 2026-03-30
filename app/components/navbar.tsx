@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { label: 'VISION',    href: '#vision' },
   { label: 'TEAM',      href: '#team' },
   { label: 'SERVICES',  href: '#services' },
-  { label: 'PROJECTS',  href: '#projects' },
+  { label: 'PORTFOLIO',  href: '/portfolio' },
   { label: 'CONTACT',   href: '#contact' },
 ]
 
@@ -208,9 +208,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
 
           {/* Right */}
           <div className="flex-1 flex items-center justify-end gap-2 sm:gap-3 md:gap-5">
-            <span className="hidden lg:block text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.2em] font-body" style={{ color: t.navbarAccent }}>
-              EST – 2020
-            </span>
+           
 
             {/* Hamburger */}
             <button
