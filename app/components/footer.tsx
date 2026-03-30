@@ -23,7 +23,7 @@ export default function Footer() {
           {/* Socials */}
           <div className="flex gap-4 mt-6 text-xs tracking-widest">
             {['INSTAGRAM', 'BEHANCE', 'DRIBBBLE'].map((item) => (
-              <p key={item} className="cursor-pointer hover:text-white transition">
+              <p key={item} className="font-body cursor-pointer hover:text-white transition">
                 {item}
               </p>
             ))}
@@ -35,7 +35,7 @@ export default function Footer() {
           {['HOME', 'ABOUT', 'PROJECTS', 'SERVICES', 'CONTACT'].map((item) => (
             <p
               key={item}
-              className="text-sm tracking-[0.25em] uppercase cursor-pointer relative group"
+              className="font-body text-sm tracking-[0.25em] uppercase cursor-pointer relative group"
             >
               {item}
 
@@ -47,7 +47,7 @@ export default function Footer() {
 
         {/* RIGHT — EMAIL */}
         <div className="md:text-right">
-          <p className="uppercase text-xs tracking-[0.35em] mb-6 text-[#e8dfd3]/60">
+          <p className="font-body uppercase text-xs tracking-[0.35em] mb-6 text-[#e8dfd3]/60">
             Stay Updated
           </p>
 

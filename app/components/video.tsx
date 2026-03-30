@@ -53,11 +53,11 @@ export default function VideoSection() {
   return (
     <div
       ref={sectionRef}
-      className="w-full h-[120vh] bg-black flex items-center justify-center"
+      className="w-full  md:flex items-center justify-center"
     >
       {/* VIDEO WRAPPER */}
       <div
-        className="relative w-full h-screen overflow-hidden transition-transform duration-300"
+        className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden transition-transform duration-300"
         style={{ transform: `scale(${scale})` }}
       >
         {/* Video */}
@@ -83,8 +83,8 @@ export default function VideoSection() {
             onClick={togglePlay}
             className="absolute inset-0 flex items-center justify-center z-20 group"
           >
-            <div className="w-20 h-20 rounded-full border border-white/40 flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition">
-              <div className="w-0 h-0 border-l-[14px] border-l-white border-y-[10px] border-y-transparent ml-1"></div>
+            <div className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 rounded-full border border-white/40 flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition">
+              <div className="w-0 h-0 border-l-[10px] sm:border-l-[12px] md:border-l-[14px] border-l-white border-y-[7px] sm:border-y-[8px] md:border-y-[10px] border-y-transparent ml-1"></div>
             </div>
           </button>
         )}
@@ -92,7 +92,7 @@ export default function VideoSection() {
         {/* 🔊 Mute Button */}
         <button
           onClick={toggleMute}
-          className="absolute bottom-6 right-6 z-20 text-white text-sm tracking-widest bg-black/40 px-4 py-2 rounded-full backdrop-blur-md hover:bg-black/60 transition"
+          className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 z-20 text-white text-xs sm:text-sm tracking-widest bg-black/40 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-md hover:bg-black/60 transition"
         >
             {isMuted ? 'UNMUTE' : 'MUTE'}
         </button>

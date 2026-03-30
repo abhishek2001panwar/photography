@@ -36,15 +36,13 @@ export default function Button({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleLeave}
 
-      className={`relative px-7 py-3 rounded-full text-xs tracking-[0.25em] uppercase transition duration-300 ${
+      className={`inline-flex items-center rounded-full font-body text-[10px] tracking-[0.28em] uppercase transition-all duration-300 ${
         variant === 'filled'
-          ? 'bg-[#2a1f14] text-white'
-          : 'border border-[#2a1f14]/30 text-[#2a1f14]'
+          ? 'bg-[#2a1f14] text-[#f0ece6] px-7 py-3.5 hover:bg-[#3d2c1e]'
+          : 'border border-[#2a1f14]/30 text-[#2a1f14] px-7 py-3 hover:border-[#2a1f14]/60'
       } ${className}`}
     >
-     <p>
-         {children}
-     </p>
+     {children}
     </button>
   )
 }

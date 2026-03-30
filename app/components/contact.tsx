@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Button from './Button';
 
 const PremiumContact = () => {
   return (
@@ -34,11 +35,11 @@ const PremiumContact = () => {
           {/* Contact Details (2 Numbers) */}
           <div className="grid grid-cols-2 gap-8 pt-6 border-t border-black/10">
             <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] mb-2 uppercase opacity-40">London Office</p>
+                <label className="text-[10px] tracking-[0.15em] font-bold uppercase opacity-50 ml-1">office</label>
               <p className="text-sm font-medium hover:underline cursor-pointer">+44 20 7946 0958</p>
             </div>
             <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] mb-2 uppercase opacity-40">New York Office</p>
+                <label className="text-[10px] tracking-[0.15em] font-bold uppercase opacity-50 ml-1">office</label>
               <p className="text-sm font-medium hover:underline cursor-pointer">+1 212 555 0198</p>
             </div>
           </div>
@@ -106,9 +107,10 @@ const PremiumContact = () => {
 
             {/* Button */}
             <div className="pt-4">
-              <button className="w-full md:w-auto px-16 py-5 bg-black text-white text-[11px] font-bold tracking-[0.3em] uppercase transition-all duration-300 hover:bg-zinc-800 active:scale-[0.98]">
-                Submit Inquiry
-              </button>
+          
+              <Button variant="outline" className="mt-4 w-full md:w-auto px-16 py-5 border-black text-black text-[11px] font-bold tracking-[0.3em] uppercase transition-all duration-300 hover:bg-black hover:text-white active:scale-[0.98]">
+                 Submit Inquiry
+              </Button>
             </div>
           </form>
         </div>
@@ -122,7 +124,7 @@ const PremiumContact = () => {
          
           className="text-[9px] font-bold tracking-[0.2em] uppercase cursor-pointer hover:opacity-50"
         >
-          Close
+          x
         </button>
          <span className="text-[9px] font-bold tracking-[0.2em] uppercase">© 2026 Arcca Group</span>
       </div>

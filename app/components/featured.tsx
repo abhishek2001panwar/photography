@@ -1,24 +1,25 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
+import Image from "next/image";
+import Button from "./Button";
 
 const items = [
   {
-    img: 'https://arccagroup.us/wp-content/uploads/2025/04/Front-1.jpg',
-    title: 'Modern Architecture',
-    desc: 'Crafting timeless spaces with elegance and precision.',
+    img: "https://arccagroup.us/wp-content/uploads/2025/04/Front-1.jpg",
+    title: "Modern Architecture",
+    desc: "Crafting timeless spaces with elegance and precision.",
   },
   {
-    img: 'https://arccagroup.us/wp-content/uploads/2025/04/Front-1.jpg',
-    title: 'Luxury Interiors',
-    desc: 'Where design meets comfort and sophistication.',
+    img: "https://arccagroup.us/wp-content/uploads/2025/04/Front-1.jpg",
+    title: "Luxury Interiors",
+    desc: "Where design meets comfort and sophistication.",
   },
   {
-    img: 'https://arccagroup.us/wp-content/uploads/2025/04/Front-1.jpg',
-    title: 'Urban Living',
-    desc: 'Redefining contemporary living experiences.',
+    img: "https://arccagroup.us/wp-content/uploads/2025/04/Front-1.jpg",
+    title: "Urban Living",
+    desc: "Redefining contemporary living experiences.",
   },
-]
+];
 
 export default function Featured() {
   return (
@@ -26,7 +27,7 @@ export default function Featured() {
       {items.map((item, i) => (
         <div
           key={i}
-          className="h-screen sticky top-0"
+          className="w-full h-[80vh] sm:h-[85vh] md:h-screen sticky top-0"
           style={{ zIndex: i + 1 }}
         >
           {/* Image */}
@@ -35,7 +36,9 @@ export default function Featured() {
               src={item.img}
               alt={item.title}
               fill
-              className="object-cover"
+              sizes="100vw"
+              className="object-cover rounded-3xl "
+              priority
             />
 
             {/* Overlay gradient */}
@@ -43,28 +46,27 @@ export default function Featured() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 h-full flex items-end px-6 md:px-16 pb-16">
-            <div className="max-w-xl text-white">
-              
-            <h2 className="text-white font-light leading-[0.9] tracking-[-0.02em]">
-  
-  <span className="block text-[clamp(3rem,10vw,10rem)]">
-    CASA
-  </span>
+          <div className="relative z-10 h-full flex items-end justify-between px-4 sm:px-6 md:px-12 lg:px-16 pb-8 sm:pb-12 md:pb-16">
+            <div className="w-full max-w-2xl text-white">
+              <h2 className="text-white font-light leading-[0.9] tracking-[-0.02em] mb-3 sm:mb-4 md:mb-6">
+                <span className="block text-[clamp(2rem,8vw,4.5rem)] sm:text-[clamp(2.5rem,8vw,5rem)]">
+                  {item.title.split(" ")[0]}
+                </span>
 
-  <span className="block text-[clamp(3rem,10vw,10rem)]">
-    FERRARA
-  </span>
-
-</h2>
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+                <span className="block text-[clamp(2rem,8vw,4.5rem)] sm:text-[clamp(2.5rem,8vw,5rem)]">
+                  {item.title.split(" ")[1]}
+                </span>
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 leading-relaxed max-w-lg">
                 {item.desc}
               </p>
-
             </div>
+            {/* <Button variant="filled" className="mt-6">
+              Explore
+              </Button> */}
           </div>
         </div>
       ))}
     </section>
-  )
+  );
 }

@@ -291,26 +291,7 @@ export default function CTASection() {
 
         </div>
 
-        {/* ── Bottom micro footer row ── */}
-        <div
-          className={`relative z-10 border-t border-[#2a1f1412] px-6 sm:px-10 md:px-16 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 fade-up ${inView ? 'show' : ''}`}
-          style={{ transitionDelay: '750ms' }}
-        >
-          <p className="font-body text-[8.5px] tracking-[0.25em] text-[rgba(42,31,20,0.38)] uppercase">
-            © 2025 ARCCA Group — All Rights Reserved
-          </p>
-          <div className="flex items-center gap-6">
-            {['Privacy Policy', 'Terms', 'Accessibility'].map(l => (
-              <a
-                key={l}
-                href="#"
-                className="font-body text-[8.5px] tracking-[0.22em] text-[rgba(42,31,20,0.38)] hover:text-[#2a1f14] transition-colors duration-200 uppercase"
-              >
-                {l}
-              </a>
-            ))}
-          </div>
-        </div>
+    
       </section>
     </>
   )

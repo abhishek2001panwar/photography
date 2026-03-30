@@ -162,7 +162,7 @@ export default function PhotoSection() {
                   </div>
                   <div className="pg-hover-overlay" />
                   <div className="pg-label">
-                    <p className="font-display text-[#f0ece6] font-light text-lg leading-none">{IMAGES[2].alt}</p>
+                    <p className="font-body text-[#f0ece6] font-light text-lg leading-none">{IMAGES[2].alt}</p>
                   </div>
                 </div>
 

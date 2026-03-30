@@ -107,7 +107,7 @@ export default function PortfolioSection() {
 
         /* Image crossfade */
         .img-slide {
-          position:absolute; inset:0;
+          position:relative; width:100%; height:100%;
           transition: opacity 0s;
         }
         .img-slide.enter-next  { opacity:0; transform:scale(1.06); animation: enterNext 0.9s cubic-bezier(0.16,1,0.3,1) forwards; }
@@ -144,7 +144,7 @@ export default function PortfolioSection() {
 
         /* Arrow button */
         .arrow-btn {
-          width:52px; height:52px; border-radius:50%;
+          width:40px; height:40px; border-radius:50%;
           border:1px solid rgba(240,236,230,0.35);
           background:rgba(240,236,230,0.08);
           backdrop-filter:blur(8px);
@@ -152,6 +152,10 @@ export default function PortfolioSection() {
           cursor:pointer;
           transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
           color:#f0ece6;
+          font-size:12px;
+        }
+        @media (min-width:768px) {
+          .arrow-btn { width:52px; height:52px; font-size:16px; }
         }
         .arrow-btn:hover {
           background:rgba(240,236,230,0.22);
@@ -188,13 +192,13 @@ export default function PortfolioSection() {
 
       <section
         ref={sectionRef}
-        className="relative w-full h-screen flex overflow-hidden bg-[#1a1108]"
+        className="relative w-full flex flex-col-reverse md:flex-row overflow-hidden bg-[#1a1108]"
       >
 
         {/* ══════════════════════════════════════
-            LEFT PANEL  — 25%
+            LEFT PANEL  — 100% mobile, 25% desktop
         ══════════════════════════════════════ */}
-        <div className="relative z-10 flex flex-col justify-between w-[25%] shrink-0 px-10 py-14 bg-[#e5ddd3]">
+        <div className="relative z-10 flex flex-col justify-between w-full md:w-1/4 shrink-0 px-4 sm:px-6 md:px-10 py-8 sm:py-10 md:py-14 bg-[#e5ddd3] md:min-h-screen min-h-auto">
 
           {/* Top block */}
           <div>
@@ -207,13 +211,13 @@ export default function PortfolioSection() {
               style={{ transitionDelay: '60ms' }}
             >
               <div className={`line-reveal h-px bg-[#8b6840] ${inView ? 'open' : ''}`} />
-              <span className=" text-[9px] tracking-[0.35em] text-[#8b6840] uppercase">Portfolio</span>
+              <span className="text-[8px] sm:text-[9px] tracking-[0.35em] text-[#8b6840] uppercase">Portfolio</span>
             </div>
 
             {/* Heading */}
             <h2
-              className={`fade-up font-display font-light text-[#1e140a] leading-[0.92] ${inView ? 'show' : ''}`}
-              style={{ fontSize: 'clamp(2rem,4vw,3rem)', letterSpacing:'-0.01em', transitionDelay: '100ms' }}
+              className={`fade-up  font-light text-[#1e140a] leading-[0.92] mt-4 md:mt-0 ${inView ? 'show' : ''}`}
+              style={{ fontSize: 'clamp(1.5rem,4vw,3rem)', letterSpacing:'-0.01em', transitionDelay: '100ms' }}
             >
               DESIGN,<br />
               <em className="not-italic" style={{ fontStyle:'italic' }}>Architecture</em><br />
@@ -223,32 +227,32 @@ export default function PortfolioSection() {
 
           {/* Bottom block — project info */}
           <div className={`fade-up ${inView ? 'show' : ''}`} style={{ transitionDelay: '200ms' }}>
-            <div className="h-px bg-[#2a1f1418] mb-6" />
+            <div className="h-px bg-[#2a1f1418] mb-4 md:mb-6" />
 
             {/* Live project name — updates with carousel */}
-            <p className="font-body text-[9px] tracking-[0.32em] text-[#8b6840] uppercase mb-2">
+            <p className="font-body text-[8px] sm:text-[9px] tracking-[0.32em] text-[#8b6840] uppercase mb-1 md:mb-2">
               Current Project
             </p>
             <p
               key={active}
               className="font-display text-[#1e140a] font-light leading-tight mb-1 caption-enter"
-              style={{ fontSize: 'clamp(1.1rem,1.6vw,1.5rem)' }}
+              style={{ fontSize: 'clamp(1rem,2.5vw,1.5rem)' }}
             >
               {cur.title}
             </p>
             <p
               key={`loc-${active}`}
-              className="font-body text-[10px] tracking-[0.18em] text-[#8b6840] mb-6 caption-enter"
+              className="font-body text-[8px] sm:text-[10px] tracking-[0.18em] text-[#8b6840] mb-4 md:mb-6 caption-enter"
             >
               {cur.location} · {cur.year}
             </p>
 
             {/* Counter */}
-            <div className="flex items-baseline gap-1 mb-4">
+            <div className="flex items-baseline gap-1 mb-3 md:mb-4">
               <span
                 key={`num-${active}`}
                 className="font-display text-[#1e140a] font-light count-num caption-enter"
-                style={{ fontSize: 'clamp(2rem,3vw,3rem)' }}
+                style={{ fontSize: 'clamp(1.5rem,3vw,3rem)' }}
               >
                 {String(active + 1).padStart(2,'0')}
               </span>
@@ -258,7 +262,7 @@ export default function PortfolioSection() {
             </div>
 
             {/* Progress line */}
-            <div className="h-px w-full bg-[#2a1f1415] relative overflow-hidden rounded-full mb-6">
+            <div className="h-px w-full bg-[#2a1f1415] relative overflow-hidden rounded-full mb-4 md:mb-6">
               <div
                 className="absolute top-0 left-0 h-full bg-[#8b6840] rounded-full"
                 style={{
@@ -273,10 +277,10 @@ export default function PortfolioSection() {
               href="#projects"
               className="inline-flex items-center gap-2 group"
             >
-              <span className="font-body text-[10px] tracking-[0.32em] text-[#2a1f14] group-hover:text-[#8b6840] transition-colors duration-300 uppercase">
+              <span className="font-body text-[8px] sm:text-[10px] tracking-[0.32em] text-[#2a1f14] group-hover:text-[#8b6840] transition-colors duration-300 uppercase">
                 View All
               </span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-[#2a1f14] group-hover:text-[#8b6840] transition-colors duration-300 group-hover:translate-x-0.5 transition-transform">
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="text-[#2a1f14] group-hover:text-[#8b6840] transition-colors duration-300 group-hover:translate-x-0.5 transition-transform">
                 <path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
@@ -284,21 +288,22 @@ export default function PortfolioSection() {
         </div>
 
         {/* ══════════════════════════════════════
-            RIGHT PANEL — 75% full-height image
+            RIGHT PANEL — 100% mobile, 75% desktop
         ══════════════════════════════════════ */}
         <div
-          className="relative flex-1 h-full overflow-hidden"
+          className="relative w-full h-[400px] sm:h-[500px] md:w-3/4 md:h-auto bg-[#1a1108]"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
 
-          {/* ── Previous image (exit) ── */}
+        {/* ── Previous image (exit) ── */}
           {prev !== null && animating && (
             <div className={`img-slide ${dir === 'next' ? 'exit-next' : 'exit-prev'}`}>
               <Image
                 src={PROJECTS[prev].img}
                 alt={PROJECTS[prev].title}
                 fill
+                sizes="(max-width: 768px) 100vw, 75vw"
                 className="object-cover object-center"
                 draggable={false}
                 priority
@@ -312,6 +317,7 @@ export default function PortfolioSection() {
               src={cur.img}
               alt={cur.title}
               fill
+              sizes="(max-width: 768px) 100vw, 75vw"
               className={`object-cover object-center ${!animating ? 'kenburns' : ''}`}
               draggable={false}
               priority
@@ -330,26 +336,26 @@ export default function PortfolioSection() {
           />
 
           {/* ── Top-right: category tag ── */}
-          <div className="absolute top-8 right-8 z-20">
+          <div className="absolute top-3 sm:top-4 md:top-8 right-3 sm:right-4 md:right-8 z-20">
             <div
-              className="px-4 py-2 border border-[rgba(240,236,230,0.25)] backdrop-blur-md"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 border border-[rgba(240,236,230,0.25)] backdrop-blur-md"
               style={{ background: 'rgba(14,9,4,0.45)' }}
             >
-              <p className="font-body text-[9px] tracking-[0.32em] text-[#f0ece6] uppercase">
+              <p className="font-body text-[7px] sm:text-[8px] md:text-[9px] tracking-[0.32em] text-[#f0ece6] uppercase">
                 {cur.category}
               </p>
             </div>
           </div>
 
-          {/* ── Bottom caption ── */}
-          <div className="absolute bottom-0 left-0 right-0 z-20 px-12 pb-12">
+          {/* ── Bottom caption (hidden on mobile, absolute on desktop) ── */}
+          <div className="hidden md:block absolute bottom-0 left-0 right-0 z-20 px-12 pb-12">
             <div className="flex items-end justify-between">
 
               {/* Title + location */}
               <div>
                 <p
                   key={`cat-${active}`}
-                  className=" text-[9px] tracking-[0.35em] text-[#c9a96e] uppercase mb-3 caption-enter"
+                  className="text-[9px] tracking-[0.35em] text-[#c9a96e] uppercase mb-3 caption-enter"
                 >
                   {cur.location}
                 </p>
@@ -370,7 +376,7 @@ export default function PortfolioSection() {
                   disabled={active === 0}
                   aria-label="Previous project"
                 >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none">
                     <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
@@ -380,7 +386,7 @@ export default function PortfolioSection() {
                   disabled={active === PROJECTS.length - 1}
                   aria-label="Next project"
                 >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none">
                     <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
@@ -401,8 +407,8 @@ export default function PortfolioSection() {
             </div>
           </div>
 
-          {/* Thin left-edge separator line */}
-          <div className="absolute top-0 left-0 bottom-0 w-px bg-[rgba(229,221,211,0.15)] z-20" />
+          {/* Thin left-edge separator line — not visible on mobile */}
+          <div className="absolute top-0 left-0 bottom-0 w-px bg-[rgba(229,221,211,0.15)] z-20 hidden md:block" />
         </div>
 
       </section>

@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import Button from './Button'
 
 export default function About2() {
   return (
-    <section className="w-full bg-[#e8dfd3] py-20 md:py-28">
+    <section className="w-full bg-[#e8dfd3] py-10 md:py-3">
       
       <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_1.2fr_1fr] gap-6 md:gap-10 px-6 md:px-16 lg:px-24">
 
@@ -48,9 +49,9 @@ export default function About2() {
           </p>
 
           {/* Button */}
-          <button className="px-6 py-2 rounded-full bg-[#3d2b1f] text-white text-xs tracking-[0.2em] uppercase w-fit hover:bg-[#2a1d15] transition">
+          <Button variant='filled' className="mt-10 px-6 py-2 rounded-full bg-[#3d2b1f] text-white text-xs tracking-[0.2em]  w-fit hover:bg-[#2a1d15] transition">
             About Us
-          </button>
+          </Button>
         </div>
 
         {/* CENTER IMAGE */}

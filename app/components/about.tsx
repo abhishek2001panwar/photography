@@ -71,13 +71,13 @@ export default function AboutSection() {
 
       <section
         ref={sectionRef}
-        className="w-full min-h-screen bg-[#e8e0d5] flex flex-col md:flex-row overflow-hidden"
+        className="w-full bg-[#e8e0d5] flex flex-col md:flex-row overflow-hidden"
       >
 
         {/* LEFT */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16 md:py-0 space-y-6">
+        <div className="w-full md:w-1/2 flex flex-col justify-center px-4 sm:px-6 md:px-14 lg:px-24 py-12 sm:py-16 md:py-20 lg:py-0 space-y-6 md:space-y-8 min-h-auto md:min-h-screen">
 
-          <p className={`text-xs tracking-[0.3em] uppercase text-[#8b6840] ${textInView ? 'line-visible' : 'line-hidden'}`}>
+          <p className={`text-[10px] sm:text-xs tracking-[0.3em] uppercase text-[#8b6840] ${textInView ? 'line-visible' : 'line-hidden'}`}>
             Why Florida?
           </p>
 
@@ -88,7 +88,7 @@ export default function AboutSection() {
                 className={`${textInView ? 'line-visible' : 'line-hidden'}`}
                 style={{
                   transitionDelay: `${i * 120 + 100}ms`,
-                  fontSize: 'clamp(2.2rem, 5vw, 3.5rem)',
+                  fontSize: 'clamp(1.75rem, 6vw, 3.5rem)',
                 }}
               >
                 {line}
@@ -97,7 +97,7 @@ export default function AboutSection() {
           </h2>
 
           <p
-            className={`text-[#4a3728] leading-[1.8] max-w-[90%] md:max-w-[420px] ${
+            className={`text-sm sm:text-base text-[#4a3728] leading-[1.8] max-w-[100%] md:max-w-[420px] ${
               textInView ? 'line-visible' : 'line-hidden'
             }`}
             style={{ transitionDelay: '400ms' }}
@@ -108,7 +108,7 @@ export default function AboutSection() {
           </p>
 
           <div
-            className={`flex gap-4 mt-6 ${
+            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 md:mt-8 ${
               textInView ? 'line-visible' : 'line-hidden'
             }`}
             style={{ transitionDelay: '500ms' }}
@@ -119,7 +119,7 @@ export default function AboutSection() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="relative w-full md:w-1/2 h-[320px] sm:h-[420px] md:h-[80vh] lg:h-screen overflow-hidden">
+        <div className="relative w-full md:w-1/2 h-[300px] sm:h-[380px] md:h-[500px] lg:h-[80vh] xl:h-screen overflow-hidden">
 
           <div
             ref={imageRef}

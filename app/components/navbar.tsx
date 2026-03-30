@@ -134,11 +134,28 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
         .nav-hidden  { transform: translateY(-110%); opacity: 0;
           transition: transform 0.55s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease; }
 
-        .panel-left  { transform: translateX(-100%);
-          transition: transform 0.78s cubic-bezier(0.16,1,0.3,1); }
-        .panel-right { transform: translateX(100%);
-          transition: transform 0.78s cubic-bezier(0.16,1,0.3,1); }
-        .panel-open  { transform: translateX(0) !important; }
+        /* Mobile: Top/Bottom reveal | Desktop: Left/Right slide */
+        .panel-left {
+          transform: translateY(-100%);
+          transition: transform 0.78s cubic-bezier(0.16,1,0.3,1);
+        }
+        .panel-right {
+          transform: translateY(100%);
+          transition: transform 0.78s cubic-bezier(0.16,1,0.3,1);
+        }
+        
+        @media (min-width: 768px) {
+          .panel-left {
+            transform: translateX(-100%);
+            transition: transform 0.78s cubic-bezier(0.16,1,0.3,1);
+          }
+          .panel-right {
+            transform: translateX(100%);
+            transition: transform 0.78s cubic-bezier(0.16,1,0.3,1);
+          }
+        }
+        
+        .panel-open { transform: translateX(0) translateY(0) !important; }
 
         .nav-item {
           opacity: 0; transform: translateY(22px);
@@ -149,12 +166,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
         .grow-line { width: 0; transition: width 0.65s ease; }
         .grow-line.open { width: 100%; }
 
-        .link-ul::after {
-          content: ''; display: block; height: 1px; width: 0;
-          transition: width 0.38s cubic-bezier(0.16,1,0.3,1);
-          background: var(--ul-color, #c9a96e);
-        }
-        .link-ul:hover::after { width: 100%; }
+
 
         .bar { display:block; width:100%; height:1px; background:currentColor;
           transition: transform 0.42s ease, opacity 0.3s ease; }
@@ -167,16 +179,16 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
 
       {/* ══════════════  NAVBAR  ══════════════ */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 h-[72px] font-body ${visible ? 'nav-visible' : 'nav-hidden'}`}
+        className={`fixed top-0 left-0 right-0 z-50 h-16 sm:h-[64px] md:h-[72px] font-body ${visible ? 'nav-visible' : 'nav-hidden'}`}
         style={navStyle}
       >
-        <div className="max-w-screen-2xl mx-auto h-full px-5 md:px-10 flex items-center justify-between gap-4">
+        <div className="max-w-screen-2xl mx-auto h-full px-3 sm:px-5 md:px-10 flex items-center justify-between gap-2 sm:gap-4">
 
           {/* Left */}
           <div className="flex-1 flex items-center">
             <a
               href="/portfolio"
-              className="hidden md:inline-flex items-center rounded-full px-5 py-[7px] text-[11px] tracking-[0.22em] font-body transition-all duration-300"
+              className="hidden lg:inline-flex items-center rounded-full px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-[7px] text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.22em] font-body transition-all duration-300"
               style={{ border: `1px solid ${t.navbarPillBorder}`, color: t.navbarPillText }}
             >
               OUR PORTFOLIO
@@ -187,7 +199,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
           <div className="flex-1 flex justify-center">
             <a
               href="/"
-              className=" text-[1.6rem] md:text-[2rem] tracking-[0.1em]  select-none"
+              className="font-body text-[1.1rem] sm:text-[1.4rem] md:text-[1.6rem] lg:text-[2rem] tracking-[0.1em] select-none"
               style={{ color: t.navbarText }}
             >
               PHOTOGRAPHY
@@ -195,8 +207,8 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
           </div>
 
           {/* Right */}
-          <div className="flex-1 flex items-center justify-end gap-3 md:gap-5">
-            <span className="hidden md:block text-[11px] tracking-[0.2em] font-body" style={{ color: t.navbarAccent }}>
+          <div className="flex-1 flex items-center justify-end gap-2 sm:gap-3 md:gap-5">
+            <span className="hidden lg:block text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.2em] font-body" style={{ color: t.navbarAccent }}>
               EST – 2020
             </span>
 
@@ -219,14 +231,14 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
       {/* ══════════════  OVERLAY MENU  ══════════════ */}
       <div className="fixed inset-0 z-[100] pointer-events-none" aria-hidden={!menuOpen}>
 
-        {/* ── LEFT PANEL ── */}
+        {/* ── LEFT PANEL (Top on mobile, Left on desktop) ── */}
         <div
-          className={`absolute top-0 left-0 h-full w-full md:w-[52%] flex flex-col panel-left ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
+          className={`absolute top-0 left-0 md:left-0 h-[60vh] md:h-full w-full md:w-[52%] flex flex-col panel-left ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
           style={{ background: t.leftBg }}
         >
-          <div className="h-[72px] shrink-0" />
+          <div className="h-16 sm:h-[64px] md:h-[72px] shrink-0" />
 
-          <nav className="flex-1 flex flex-col justify-center px-8 md:px-14 overflow-hidden">
+          <nav className="flex-1 flex flex-col justify-center px-4 sm:px-8 md:px-14 overflow-hidden">
             {NAV_LINKS.map((link, i) => (
               <React.Fragment key={link.label}>
                 <a
@@ -234,7 +246,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   onMouseEnter={() => setHoveredLink(link.label)}
                   onMouseLeave={() => setHoveredLink(null)}
                   onClick={() => setMenuOpen(false)}
-                  className={`nav-item link-ul font-display font-meidum tracking-[0.02em] text-4xl md:text-5xl lg:text-[3.4rem] py-3 md:py-[14px] ${menuOpen ? 'show' : ''}`}
+                  className={`nav-item link-ul font-regular tracking-[0.02em] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.4rem] py-2 sm:py-3 md:py-[14px] ${menuOpen ? 'show' : ''}`}
                   style={{
                     color: hoveredLink && hoveredLink !== link.label ? t.leftDimmed : t.leftText,
                     transitionDelay: menuOpen ? `${i * 60 + 90}ms` : '0ms',
@@ -253,27 +265,27 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
             ))}
           </nav>
 
-          <div className="px-8 md:px-14 pb-8 text-[9px] tracking-[0.3em] font-body" style={{ color: t.leftFooter }}>
+          <div className="px-4 sm:px-8 md:px-14 pb-6 sm:pb-8 text-[8px] sm:text-[9px] tracking-[0.3em] font-body" style={{ color: t.leftFooter }}>
             © 2025 ARCCA
           </div>
         </div>
 
-        {/* ── RIGHT PANEL ── */}
+        {/* ── RIGHT PANEL (Bottom on mobile, Right on desktop) ── */}
         <div
-          className={`absolute top-0 right-0 h-full w-full md:w-[48%] flex flex-col panel-right ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
+          className={`absolute top-auto bottom-0 right-0 md:top-0 md:bottom-auto h-[40vh] md:h-full w-full md:w-[48%] flex flex-col panel-right ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
           style={{ background: t.rightBg }}
         >
           {/* Top bar */}
-          <div className="h-[72px] shrink-0 flex items-center justify-between px-8 md:px-12">
+          <div className="h-16 sm:h-[64px] md:h-[72px] shrink-0 flex items-center justify-between px-4 sm:px-8 md:px-12">
             <span
-              className="font-display text-xl tracking-[0.38em] font-light md:invisible"
+              className="font-display text-lg sm:text-xl tracking-[0.38em] font-light md:invisible"
               style={{ color: t.rightLogo }}
             >
               ARCCA
             </span>
             <button
               onClick={() => setMenuOpen(false)}
-              className="text-[11px] tracking-[0.28em] font-body transition-colors duration-200 ml-auto"
+              className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.28em] font-body transition-colors duration-200 ml-auto"
               style={{ color: t.rightClose }}
               onMouseEnter={e => (e.currentTarget.style.color = t.rightCloseHover)}
               onMouseLeave={e => (e.currentTarget.style.color = t.rightClose)}
@@ -282,21 +294,21 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
             </button>
           </div>
 
-          <div className="flex-1 flex flex-col justify-between px-8 md:px-12 pb-10 overflow-y-auto">
+          <div className="flex-1 flex flex-col justify-between px-4 sm:px-8 md:px-12 pb-6 sm:pb-8 md:pb-10 overflow-y-auto">
 
             {/* Wordmark */}
-            <div className="mt-6 md:mt-10">
+            <div className="mt-4 sm:mt-6 md:mt-10">
               <p
-                className="font-display font-light tracking-[0.14em] text-5xl md:text-7xl lg:text-8xl leading-none"
+                className="font-display font-light tracking-[0.14em] text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl leading-none"
                 style={{ color: t.rightLogo }}
               >
                 ARCCA
               </p>
-              <p className="mt-1 text-[9px] tracking-[0.22em] font-body" style={{ color: t.rightLabel }}>®</p>
+              <p className="mt-0.5 sm:mt-1 text-[8px] sm:text-[9px] tracking-[0.22em] font-body" style={{ color: t.rightLabel }}>®</p>
             </div>
 
             {/* Contact grid */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-7">
+            <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-7">
 
               {[
                 {
@@ -304,7 +316,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   content: (
                     <a
                       href={`mailto:${CONTACT_INFO.email.toLowerCase()}`}
-                      className="text-[11px] tracking-[0.14em] font-body transition-colors duration-200 block"
+                      className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.14em] font-body transition-colors duration-200 block"
                       style={{ color: t.rightText }}
                       onMouseEnter={e => (e.currentTarget.style.color = t.rightLabel)}
                       onMouseLeave={e => (e.currentTarget.style.color = t.rightText)}
@@ -317,10 +329,10 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   label: 'ADDRESS',
                   content: (
                     <>
-                      <p className="text-[11px] tracking-[0.1em] leading-relaxed font-body" style={{ color: t.rightText }}>
+                      <p className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.1em] leading-relaxed font-body" style={{ color: t.rightText }}>
                         {CONTACT_INFO.address}
                       </p>
-                      <p className="mt-2.5 text-[10px] tracking-[0.1em] font-body" style={{ color: t.rightMuted }}>
+                      <p className="mt-1.5 sm:mt-2 md:mt-2.5 text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.1em] font-body" style={{ color: t.rightMuted }}>
                         {CONTACT_INFO.hours}
                       </p>
                     </>
@@ -331,7 +343,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   content: (
                     <a
                       href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}
-                      className="text-[11px] tracking-[0.14em] font-body transition-colors duration-200 block"
+                      className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.14em] font-body transition-colors duration-200 block"
                       style={{ color: t.rightText }}
                       onMouseEnter={e => (e.currentTarget.style.color = t.rightLabel)}
                       onMouseLeave={e => (e.currentTarget.style.color = t.rightText)}
@@ -343,12 +355,12 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                 {
                   label: 'SOCIAL',
                   content: (
-                    <div className="flex flex-col gap-1.5">
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
                       {CONTACT_INFO.social.map(s => (
                         <a
                           key={s}
                           href="#"
-                          className="text-[11px] tracking-[0.14em] font-body transition-colors duration-200"
+                          className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.14em] font-body transition-colors duration-200"
                           style={{ color: t.rightText }}
                           onMouseEnter={e => (e.currentTarget.style.color = t.rightLabel)}
                           onMouseLeave={e => (e.currentTarget.style.color = t.rightText)}

@@ -25,7 +25,7 @@ function HeroSection() {
       />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-end max-w-8xl">
+      <div className="absolute inset-0 flex flex-col justify-end max-w-7xl mx-auto">
         <div className="px-4 pb-12 flex justify-between items-end w-full">
           <p className="text-lg md:text-xl text-white max-w-sm">
             Discover the art of photography through our stunning portfolio and
@@ -33,12 +33,11 @@ function HeroSection() {
             elit. Sed numquam animi tempora sunt fuga ipsum!
           </p>
 
-          <button className="relative px-8 py-3 rounded-full overflow-hidden group">
-            {/* Background Blur Layer */}
-             {/* Text */}
-            <span className="underline pb-3 relative z-10 text-white text-lg md:text-lg tracking-tight font-light underline-offset-4">
-                EXPLORE →
+          <button className="group flex items-center gap-2">
+            <span className="text-white text-lg md:text-xl font-light">
+              EXPLORE
             </span>
+            <span className="text-white text-lg">→</span>
           </button>
         </div>
       </div>
