@@ -251,22 +251,7 @@ export default function PhotoSection() {
             </div>
           </div>
 
-          {/* ── Bottom thin strip — project count ── */}
-          <div
-            className="flex items-center justify-between px-5 py-4 mt-[3px]"
-            style={{ background: 'rgba(42,31,20,0.04)', borderTop: '1px solid rgba(42,31,20,0.08)' }}
-          >
-            <div className="flex items-center gap-3">
-              <div className="h-px w-8 bg-[#8b684060]" />
-              <span className="font-body text-[8.5px] tracking-[0.32em] text-[#8b6840] uppercase">
-                Portfolio · Selected Works
-              </span>
-            </div>
-            <span className="font-body text-[8.5px] tracking-[0.25em] text-[rgba(42,31,20,0.35)] uppercase">
-              2022 — 2025
-            </span>
-          </div>
-
+     
         </div>
       </section>
     </>

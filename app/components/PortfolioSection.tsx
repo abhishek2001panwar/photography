@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react'
 import Image from 'next/image'
+import Button from './Button'
 
 const PROJECTS = [
   {
@@ -192,6 +193,7 @@ export default function PortfolioSection() {
 
       <section
         ref={sectionRef}
+        id='services'
         className="relative w-full flex flex-col-reverse md:flex-row overflow-hidden bg-[#1a1108]"
       >
 
@@ -211,7 +213,7 @@ export default function PortfolioSection() {
               style={{ transitionDelay: '60ms' }}
             >
               <div className={`line-reveal h-px bg-[#8b6840] ${inView ? 'open' : ''}`} />
-              <span className="text-[8px] sm:text-[9px] tracking-[0.35em] text-[#8b6840] uppercase">Portfolio</span>
+              <span className="text-[8px] sm:text-[9px] tracking-[0.35em] text-[#8b6840] uppercase">Services</span>
             </div>
 
             {/* Heading */}
@@ -223,21 +225,19 @@ export default function PortfolioSection() {
             <div className="h-px bg-[#2a1f1418] mb-4 md:mb-6" />
 
             {/* Live project name — updates with carousel */}
-            <p className="font-body-custom text-[8px] sm:text-[9px] tracking-[0.32em] text-[#8b6840] uppercase mb-1 md:mb-2">
-              Current Project
-            </p>
-            <p
+         
+            <h1
               key={active}
               className="font-display text-[#1e140a] font-light leading-tight mb-1 caption-enter"
               style={{ fontSize: 'clamp(1rem,2.5vw,1.5rem)' }}
             >
               {cur.title}
-            </p>
+            </h1>
             <p
               key={`loc-${active}`}
-              className="font-body-custom text-[8px] sm:text-[10px] tracking-[0.18em] text-[#8b6840] mb-4 md:mb-6 caption-enter"
+              className="font-body-custom text-[8px] sm:text-[7px] tracking-[0.18em] text-[#8b6840] mb-4 md:mb-6 caption-enter"
             >
-              {cur.location} · {cur.year}
+              {cur.location} 
             </p>
 
             {/* Counter */}
@@ -270,12 +270,11 @@ export default function PortfolioSection() {
               href="#projects"
               className="inline-flex items-center gap-2 group"
             >
-              <span className="font-body-custom text-[8px] sm:text-[10px] tracking-[0.32em] text-[#2a1f14] group-hover:text-[#8b6840] transition-colors duration-300 uppercase">
-                View All
-              </span>
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="text-[#2a1f14] group-hover:text-[#8b6840] transition-colors duration-300 group-hover:translate-x-0.5 transition-transform">
-                <path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <Button variant='outline'>
+                  View All
+              </Button>
+            
+            
             </a>
           </div>
         </div>
@@ -339,17 +338,17 @@ export default function PortfolioSection() {
               <div>
                 <p
                   key={`cat-${active}`}
-                  className="font-body-custom text-[6px] tracking-[0.35em] text-[#c9a96e] uppercase mb-3 caption-enter"
+                  className="font-body-custom text-[4px] tracking-[0.35em] text-[#c9a96e] uppercase  caption-enter"
                 >
                   {cur.location}
                 </p>
-                <h3
+                <h1
                   key={`title-${active}`}
                   className="font-subheading font-light text-[#f0ece6] leading-none caption-enter"
                   style={{ fontSize: 'clamp(2.4rem, 4vw, 4rem)' }}
                 >
                   {cur.title}
-                </h3>
+                </h1>
               </div>
 
               {/* ── Arrow buttons — on image, bottom-right ── */}

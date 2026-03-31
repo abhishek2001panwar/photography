@@ -71,6 +71,7 @@ export default function AboutSection() {
 
       <section
         ref={sectionRef}
+        id='about'
         className="w-full bg-[#e8e0d5] flex flex-col md:flex-row overflow-hidden"
       >
 

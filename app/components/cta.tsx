@@ -138,7 +138,7 @@ export default function CTASection() {
                 style={{ transitionDelay: '400ms' }}
               >
                 <p className="font-body-custom text-[#3d2c1e] text-[0.72rem] leading-[1.9] mb-3">
-                  At Arcca Group, every project is conceived as a creation that transcends architecture — a space designed to{' '}
+                  At Arcca Group, every project is conceived as a creation that transcends architecture - a space designed to{' '}
                   <strong className="font-body-custom" style={{ fontWeight: 400, color: '#1e140a' }}>elevate everyday life</strong> through:
                 </p>
                 <p className="font-body-custom text-[#3d2c1e] text-[0.72rem] leading-[1.9]">
@@ -149,7 +149,7 @@ export default function CTASection() {
               {/* INSPIRED */}
               <div className="flex-1 flex justify-center lg:justify-start lg:pl-[30%]">
                 <div className="word-mask">
-                  <span
+                  <h1
                     className={`word-inner  font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
                     style={{
                       fontSize: 'clamp(4rem, 11vw, 13rem)',
@@ -158,7 +158,7 @@ export default function CTASection() {
                     }}
                   >
                     INSPIRED
-                  </span>
+                  </h1>
                 </div>
               </div>
 
@@ -186,7 +186,7 @@ export default function CTASection() {
             <div className="flex items-baseline justify-start md:justify-center gap-4 md:gap-6 mb-0 md:mb-[-0.1em] flex-wrap md:flex-nowrap">
 
               <div className="word-mask">
-                <span
+                <h1
                   className={`word-inner  font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
                   style={{
                     fontSize: 'clamp(4rem, 11vw, 13rem)',
@@ -195,7 +195,7 @@ export default function CTASection() {
                   }}
                 >
                   DESIGN
-                </span>
+                </h1>
               </div>
 
               {/* Image 2 — living room, inline between words */}
@@ -221,7 +221,7 @@ export default function CTASection() {
               </div>
 
               <div className="word-mask">
-                <span
+                <h1
                   className={`word-inner  font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
                   style={{
                     fontSize: 'clamp(4rem, 11vw, 13rem)',
@@ -230,14 +230,14 @@ export default function CTASection() {
                   }}
                 >
                   BY
-                </span>
+                </h1>
               </div>
             </div>
 
             {/* Row 3 — ARCCA®  +  TALK TO US pill */}
             <div className="flex items-end justify-start md:justify-center gap-6 flex-wrap md:flex-nowrap">
               <div className="word-mask">
-                <span
+                <h1
                   className={`word-inner  font-light text-[#2a1f14] leading-none ${inView ? 'revealed' : ''}`}
                   style={{
                     fontSize: 'clamp(4rem, 11vw, 13rem)',
@@ -257,7 +257,7 @@ export default function CTASection() {
                   >
                     ®
                   </sup>
-                </span>
+                </h1>
               </div>
 
               {/* Talk to us pill — sits at baseline of ARCCA */}

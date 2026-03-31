@@ -3,10 +3,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 
 const NAV_LINKS = [
-  { label: 'HOME',      href: '#home' },
+  { label: 'HOME',      href: '/' },
   { label: 'ABOUT US',  href: '#about' },
-  { label: 'VISION',    href: '#vision' },
-  { label: 'TEAM',      href: '#team' },
+  { label: 'Film',    href: '/film' },
+ 
   { label: 'SERVICES',  href: '#services' },
   { label: 'PORTFOLIO',  href: '/portfolio' },
   { label: 'CONTACT',   href: '#contact' },
@@ -185,13 +185,20 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
         <div className="max-w-screen-2xl mx-auto h-full px-3 sm:px-5 md:px-10 flex items-center justify-between gap-2 sm:gap-4">
 
           {/* Left */}
-          <div className="flex-1 flex items-center">
+          <div className="flex-1 flex items-center gap-2">
             <a
               href="/portfolio"
-              className="hidden lg:inline-flex items-center rounded-full px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-[7px] text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.22em] font-button-custom transition-all duration-300"
+              className="hidden lg:inline-flex items-center rounded-full px-3 sm:px-4 md:px-4 py-1.5 sm:py-2 md:py-[5px] text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.22em] font-button-custom transition-all duration-300"
               style={{ border: `1px solid ${t.navbarPillBorder}`, color: t.navbarPillText }}
             >
               OUR PORTFOLIO
+            </a>
+             <a
+              href="/film"
+              className="hidden uppercase lg:inline-flex items-center rounded-full px-3 sm:px-4 md:px-4 py-1.5 sm:py-2 md:py-[5px] text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.22em] font-button-custom transition-all duration-300"
+              style={{ border: `1px solid ${t.navbarPillBorder}`, color: t.navbarPillText }}
+            >
+              film
             </a>
           </div>
 
@@ -202,7 +209,9 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
               className=" text-[1.1rem] sm:text-[1.4rem] md:text-[1.6rem] lg:text-[2rem] tracking-[0.1em] select-none"
               style={{ color: t.navbarText , fontFamily: "" }}
             >
-              PHOTOGRAPHY
+              <h1>
+                PHOTOGRAPHY
+              </h1>
             </a>
           </div>
 
@@ -244,14 +253,17 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   onMouseEnter={() => setHoveredLink(link.label)}
                   onMouseLeave={() => setHoveredLink(null)}
                   onClick={() => setMenuOpen(false)}
-                  className={`nav-item link-ul font-regular tracking-[0.02em] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.4rem] py-2 sm:py-3 md:py-[14px] ${menuOpen ? 'show' : ''}`}
+                  className={`nav-item link-ul font-regular tracking-[0.02em] text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-[3.8rem] py-2 sm:py-3 md:py-[16px] ${menuOpen ? 'show' : ''}`}
                   style={{
                     color: hoveredLink && hoveredLink !== link.label ? t.leftDimmed : t.leftText,
                     transitionDelay: menuOpen ? `${i * 60 + 90}ms` : '0ms',
                     '--ul-color': t.leftUnderline,
                   } as React.CSSProperties}
                 >
-                  {link.label}
+                  <h1>
+                    {link.label}
+                  </h1>
+              
                 </a>
                 {i < NAV_LINKS.length - 1 && (
                   <div

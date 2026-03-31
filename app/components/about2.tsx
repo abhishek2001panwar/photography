@@ -13,23 +13,21 @@ export default function About2() {
         <div className="flex flex-col justify-center max-w-md">
           
           {/* Logo + Label */}
-          <div className="mb-6">
-            <div className="w-10 h-10 border border-[#2a1f14] flex items-center justify-center text-xs">
-              AR
-            </div>
+          <div className="">
+           
             <p className="mt-3 text-xs tracking-[0.3em] text-[#8b6840] uppercase">
               Architecture
             </p>
           </div>
 
           {/* Heading */}
-          <h2 className="text-[#2a1f14] font-light leading-[1.1] tracking-[-0.01em] mb-6">
-            <span className="block text-[clamp(2rem,3vw,3rem)]">
+          <h2 className="text-[#2a1f14] font-light leading-[1] mb-6">
+            <h1 className="block text-[clamp(3rem,4vw,5rem)]">
               INSPIRED
-            </span>
-            <span className="block text-[clamp(2rem,3vw,3rem)]">
+            </h1>
+            <h1 className="block text-[clamp(3rem,4vw,5rem)]">
               BY NOW
-            </span>
+            </h1>
           </h2>
 
           {/* Paragraph */}

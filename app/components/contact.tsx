@@ -5,22 +5,19 @@ import Button from './Button';
 const PremiumContact = () => {
 
   return (
-    <section className="min-h-screen bg-[#F5F4EB] text-black font-body-custom selection:bg-black selection:text-white flex items-center justify-center p-3 sm:p-5 md:p-8 lg:p-12 py-2 sm:py-2 md:py-3">
+    <section id='contact' className=" bg-[#F5F4EB] text-black font-body-custom selection:bg-black selection:text-white flex items-center justify-center py-20 px-10">
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-12 lg:gap-16">
         
         {/* Left Side: Editorial Typography & Map */}
         <div className="lg:col-span-5 flex flex-col space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
           <div className="space-y-3 sm:space-y-4 md:space-y-6">
-            {/* Minimalist Logo */}
-            <div className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 border border-black flex items-center justify-center">
-              <span className="text-[7px] sm:text-[8px] md:text-[10px] font-bold leading-none tracking-tighter">AR<br/>CCA</span>
-            </div>
+        
 
-            <h2 className="font-subheading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter leading-[0.85] uppercase">
-              Let's <br />
-              <span className="italic font-accent">Work</span> <br />
+            <h1 className="font-subheading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter leading-[1] uppercase">
+              Let's 
+              <span className="italic font-accent">  Work</span> <br />
               Together
-            </h2>
+            </h1>
           </div>
 
           {/* Integrated Map Placeholder */}

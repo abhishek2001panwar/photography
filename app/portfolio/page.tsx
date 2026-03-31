@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
+import Button from '../components/Button'
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 type Status = 'Current' | 'In Development' | 'Coming Soon' | 'Sold'
@@ -168,17 +169,16 @@ export default function ProjectsPage() {
         .arr-btn:disabled { opacity:0.2; cursor:not-allowed; transform:none; }
 
         /* Grid card */
-        .grid-card { position:relative; overflow:hidden; cursor:pointer; }
-        .grid-card img { transition:transform 1.1s cubic-bezier(0.16,1,0.3,1); }
+        .grid-card { position:relative; overflow:hidden; cursor:pointer; display:flex; flex-direction:column; background:#f0ece6; border-radius:8px; transition:box-shadow 0.3s ease, transform 0.3s ease; }
+        .grid-card:hover { box-shadow:0 16px 40px rgba(42,31,20,0.12); transform:translateY(-2px); }
+        .grid-card-img { position:relative; width:100%; height:280px; overflow:hidden; border-radius:8px 8px 0 0; }
+        .grid-card img { transition:transform 1.1s cubic-bezier(0.16,1,0.3,1); width:100%; height:100%; object-fit:cover; }
         .grid-card:hover img { transform:scale(1.06); }
         .grid-card .card-info {
-          position:absolute; bottom:0; left:0; right:0;
-          padding:24px 20px 20px;
-          background:linear-gradient(to top, rgba(14,9,4,0.85) 0%, transparent 100%);
-          transform:translateY(8px);
-          transition:transform 0.45s ease, opacity 0.45s ease;
+          padding:12px 18px;
+          flex:1; display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start;
         }
-        .grid-card:hover .card-info { transform:translateY(0); }
+        .card-title { font-family:'CustomHeading',sans-serif; font-size:clamp(0.95rem,2vw,1.3rem); color:#3b2a1f; font-weight:600; line-height:1.3; }
 
         /* Grid fade in stagger */
         .grid-item { opacity:0; transform:translateY(20px);
@@ -283,10 +283,11 @@ export default function ProjectsPage() {
             {/* View project CTA */}
             <a
               href={cur.href}
-              className="font-body-custom text-[10px] tracking-[0.32em] uppercase text-[#f0ece6] border border-[rgba(240,236,230,0.3)] px-6 py-3 hover:bg-[rgba(240,236,230,0.1)] transition-all duration-300"
+              className="font-body-custom italic text-[10px] tracking-[0.32em] uppercase text-[#f0ece6] border border-[rgba(240,236,230,0.3)] px-6 py-3 hover:bg-[rgba(240,236,230,0.1)] transition-all duration-300"
             >
               View Project
             </a>
+           
           </div>
 
           {/* Dot strip */}
@@ -313,10 +314,10 @@ export default function ProjectsPage() {
       {/* ══════════════════════════════════════════════════════
           ALL PROJECTS GRID  — light sand bg
       ══════════════════════════════════════════════════════ */}
-      <section className="w-full bg-[#e5ddd3] pt-24 pb-28 px-8 md:px-16" id="arcca">
+      <section className="w-full bg-[#e5ddd3] pt-10 pb-28 px-8 md:px-16" id="arcca">
 
         {/* Section header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-3 gap-8">
           <div>
             <p className="section-label text-[#8b6840] mb-4">All Projects</p>
             <h1
@@ -327,34 +328,22 @@ export default function ProjectsPage() {
             </h1>
           </div>
 
-          {/* Filter pills */}
-          <div className="flex flex-wrap gap-2">
-            {FILTERS.map(f => (
-              <button
-                key={f.value}
-                onClick={() => setFilter(f.value)}
-                className={`f-pill ${filter === f.value ? 'f-pill-on' : 'f-pill-off'}`}
-              >
-                {f.label}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Divider */}
         <div className="h-px bg-[#2a1f1415] mb-14" />
 
         {/* Grid */}
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((project, i) => (
             <a
               key={project.id}
               href={project.href}
               className={`grid-item grid-card group ${gridInView ? 'reveal' : ''}`}
-              style={{ transitionDelay: gridInView ? `${(i % 6) * 80}ms` : '0ms', aspectRatio: '4/3' }}
+              style={{ transitionDelay: gridInView ? `${(i % 6) * 80}ms` : '0ms' }}
             >
               {/* Image */}
-              <div className="absolute inset-0">
+              <div className="grid-card-img">
                 <Image
                   src={project.img}
                   alt={project.title}
@@ -363,38 +352,17 @@ export default function ProjectsPage() {
                 />
               </div>
 
-              {/* Status badge — top left */}
-              <div className="absolute top-4 left-4 z-10">
-                <span
-                  className="font-body-custom text-[8px] tracking-[0.28em] uppercase px-3 py-1.5"
-                  style={{
-                    background: 'rgba(14,9,4,0.55)',
-                    backdropFilter: 'blur(6px)',
-                    color: STATUS_COLORS[project.status],
-                  }}
+              {/* Info section */}
+              <div className="card-info">
+                <h3 className="card-title">
+                  {project.title}
+                </h3>
+                {/* <Button 
+                 variant="outline" 
+                  className="!text-xs !px-3 !py-1.5 !text-[10px]"
                 >
-                  {project.status}
-                </span>
-              </div>
-
-              {/* Info overlay */}
-              <div className="card-info z-10">
-                <p className="font-body-custom text-[9px] tracking-[0.28em] uppercase mb-2" style={{ color: STATUS_COLORS[project.status] }}>
-                  {project.location}
-                </p>
-                <div className="flex items-end justify-between">
-                  <h3 className="font-display font-light text-[#f0ece6] leading-none"
-                    style={{ fontSize: 'clamp(1.2rem,1.8vw,1.8rem)' }}
-                  >
-                    {project.title}
-                  </h3>
-                  {/* Arrow */}
-                  <div className="w-8 h-8 rounded-full border border-[rgba(240,236,230,0.3)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0 ml-3">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path d="M2.5 6h7M6.5 3L9.5 6l-3 3" stroke="#f0ece6" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </div>
+                    Explore
+                </Button> */}
               </div>
             </a>
           ))}
@@ -408,16 +376,7 @@ export default function ProjectsPage() {
           </div>
         )}
 
-        {/* Bottom count */}
-        <div className="mt-16 flex items-center justify-between">
-          <p className="font-body-custom text-[10px] tracking-[0.25em] text-[#8b6840] uppercase">
-            Showing {filtered.length} of {PROJECTS.length} projects
-          </p>
-          <div className="h-px flex-1 bg-[#2a1f1415] mx-8" />
-          <p className="font-display text-[#2a1f14] text-2xl font-light">
-            {String(filtered.length).padStart(2,'0')}
-          </p>
-        </div>
+      
       </section>
     </>
   )
