@@ -92,7 +92,7 @@ export default function PhotoSection() {
 
       <section
         ref={sectionRef}
-        className="pg-grain relative w-full bg-[#e5ddd3] overflow-hidden py-2"
+        className="pg-grain relative w-full bg-[#e5ddd3] overflow-hidden py-2 px-2 md:px-0"
       >
         <div className="relative z-10">
 
@@ -103,7 +103,7 @@ export default function PhotoSection() {
 
             {/* Cell 1 — tall portrait */}
             <div
-              className="pg-cell md:w-[30%]"
+              className="pg-cell w-full md:w-[30%]"
               style={{ aspectRatio: '3/4' }}
               onMouseEnter={() => setHovered(0)}
               onMouseLeave={() => setHovered(null)}
@@ -126,7 +126,7 @@ export default function PhotoSection() {
               {/* Cell 2 — wide landscape */}
               <div
                 className="pg-cell w-full"
-                style={{ aspectRatio: '16/7' }}
+                style={{ aspectRatio: '16/7', minHeight: '200px' }}
                 onMouseEnter={() => setHovered(1)}
                 onMouseLeave={() => setHovered(null)}
               >
@@ -195,7 +195,7 @@ export default function PhotoSection() {
 
             {/* Cell 5 */}
             <div
-              className="pg-cell md:w-[42%]"
+              className="pg-cell w-full md:w-[42%]"
               style={{ aspectRatio: '4/3' }}
               onMouseEnter={() => setHovered(4)}
               onMouseLeave={() => setHovered(null)}
@@ -214,8 +214,8 @@ export default function PhotoSection() {
 
             {/* Cell 6 — portrait, center */}
             <div
-              className="pg-cell md:w-[16%]"
-              style={{ aspectRatio: '9/16' }}
+              className="pg-cell w-full md:w-[16%]"
+              style={{ aspectRatio: '9/16', minHeight: '250px' }}
               onMouseEnter={() => setHovered(5)}
               onMouseLeave={() => setHovered(null)}
             >
