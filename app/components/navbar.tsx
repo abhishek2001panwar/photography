@@ -210,8 +210,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
               style={{ color: t.navbarText , fontFamily: "" }}
             >
               <h1>
-                PHOTOGRAPHY
-              </h1>
+ARCCA              </h1>
             </a>
           </div>
 
