@@ -12,10 +12,10 @@ const awards = [
 
 const socialLinks = [
   { label: 'Instagram', url: '#', icon: FaInstagram },
-  { label: 'LinkedIn', url: '#', icon: FaLinkedin },
-  { label: 'Behance', url: '#', icon: FaBehance },
-  { label: 'Twitter', url: '#', icon: FaXTwitter },
-  { label: 'Pinterest', url: '#', icon: FaPinterest },
+  // { label: 'LinkedIn', url: '#', icon: FaLinkedin },
+  // { label: 'Behance', url: '#', icon: FaBehance },
+  // { label: 'Twitter', url: '#', icon: FaXTwitter },
+  // { label: 'Pinterest', url: '#', icon: FaPinterest },
 ]
 
 export default function Footer() {
@@ -99,7 +99,7 @@ export default function Footer() {
       {/* BOTTOM */}
       <div className="mt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-[#e8dfd3]/50 tracking-wide gap-4">
 
-        <p>© 2026 Arcca Group — All Rights Reserved</p>
+        <p>© 2026 Arcca Group - All Rights Reserved</p>
 
         <div className="flex gap-6">
           <p className="hover:text-[#c9a96e] cursor-pointer transition">Privacy</p>
