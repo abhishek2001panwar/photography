@@ -206,7 +206,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
           <div className="flex-1 flex justify-center">
             <a
               href="/"
-              className="text-[0.8rem] sm:text-[1rem] md:text-[1.4rem] lg:text-[1.8rem] tracking-[0.08em] select-none"
+              className="text-[0.6rem] sm:text-[0.85rem] md:text-[1.4rem] lg:text-[1.8rem] tracking-[0.08em] select-none"
               style={{ color: t.navbarText , fontFamily: "" }}
             >
               <h1>
@@ -240,12 +240,12 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
 
         {/* ── LEFT PANEL (Top on mobile, Left on desktop) ── */}
         <div
-          className={`absolute top-0 left-0 md:left-0 h-[70vh] md:h-full w-full md:w-[52%] flex flex-col panel-left ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
+          className={`absolute top-0 left-0 md:left-0 h-screen md:h-full w-full md:w-[52%] flex flex-col panel-left ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
           style={{ background: t.leftBg }}
         >
           <div className="h-16 sm:h-[64px] md:h-[72px] shrink-0" />
 
-          <nav className="flex-1 flex flex-col justify-start pt-2 sm:pt-4 md:justify-center px-3 sm:px-8 md:px-14 overflow-hidden">
+          <nav className="flex-1 flex flex-col justify-start pt-1 sm:pt-4 md:justify-center px-3 sm:px-8 md:px-14 overflow-y-auto md:overflow-hidden">
             {NAV_LINKS.map((link, i) => (
               <React.Fragment key={link.label}>
                 <a
@@ -253,7 +253,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   onMouseEnter={() => setHoveredLink(link.label)}
                   onMouseLeave={() => setHoveredLink(null)}
                   onClick={() => setMenuOpen(false)}
-                  className={`nav-item link-ul font-regular tracking-[0.02em] text-lg sm:text-2xl md:text-4xl lg:text-6xl xl:text-[3.8rem] py-1.5 sm:py-3 md:py-[16px] ${menuOpen ? 'show' : ''}`}
+                  className={`nav-item link-ul font-regular tracking-[0.02em] text-base sm:text-xl md:text-4xl lg:text-6xl xl:text-[3.8rem] py-1 sm:py-3 md:py-[16px] ${menuOpen ? 'show' : ''}`}
                   style={{
                     color: hoveredLink && hoveredLink !== link.label ? t.leftDimmed : t.leftText,
                     transitionDelay: menuOpen ? `${i * 60 + 90}ms` : '0ms',

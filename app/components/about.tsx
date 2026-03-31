@@ -89,7 +89,7 @@ export default function AboutSection() {
                 className={`${textInView ? 'line-visible' : 'line-hidden'}`}
                 style={{
                   transitionDelay: `${i * 120 + 100}ms`,
-                  fontSize: 'clamp(1.2rem, 4.5vw, 3rem)',
+                  fontSize: 'clamp(1.6rem, 6vw, 3rem)',
                 }}
               >
                 {line}
@@ -103,7 +103,7 @@ export default function AboutSection() {
             }`}
             style={{ transitionDelay: '400ms' }}
           >
-            We envision spaces that are not just lived in, but felt — where
+            We envision spaces that are not just lived in, but felt - where
             every element has been curated to inspire connection, serenity,
             and a profound sense of belonging.
           </p>
