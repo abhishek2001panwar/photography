@@ -198,7 +198,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
               className="hidden uppercase lg:inline-flex items-center rounded-full px-3 sm:px-4 md:px-4 py-1.5 sm:py-2 md:py-[5px] text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.22em] font-button-custom transition-all duration-300"
               style={{ border: `1px solid ${t.navbarPillBorder}`, color: t.navbarPillText }}
             >
-              film
+              FILMS
             </a>
           </div>
 
@@ -206,7 +206,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
           <div className="flex-1 flex justify-center">
             <a
               href="/"
-              className=" text-[1.1rem] sm:text-[1.4rem] md:text-[1.6rem] lg:text-[2rem] tracking-[0.1em] select-none"
+              className="text-[0.8rem] sm:text-[1rem] md:text-[1.4rem] lg:text-[1.8rem] tracking-[0.08em] select-none"
               style={{ color: t.navbarText , fontFamily: "" }}
             >
               <h1>
@@ -240,12 +240,12 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
 
         {/* ── LEFT PANEL (Top on mobile, Left on desktop) ── */}
         <div
-          className={`absolute top-0 left-0 md:left-0 h-[60vh] md:h-full w-full md:w-[52%] flex flex-col panel-left ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
+          className={`absolute top-0 left-0 md:left-0 h-[70vh] md:h-full w-full md:w-[52%] flex flex-col panel-left ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
           style={{ background: t.leftBg }}
         >
           <div className="h-16 sm:h-[64px] md:h-[72px] shrink-0" />
 
-          <nav className="flex-1 flex flex-col justify-center px-4 sm:px-8 md:px-14 overflow-hidden">
+          <nav className="flex-1 flex flex-col justify-start pt-2 sm:pt-4 md:justify-center px-3 sm:px-8 md:px-14 overflow-hidden">
             {NAV_LINKS.map((link, i) => (
               <React.Fragment key={link.label}>
                 <a
@@ -253,7 +253,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   onMouseEnter={() => setHoveredLink(link.label)}
                   onMouseLeave={() => setHoveredLink(null)}
                   onClick={() => setMenuOpen(false)}
-                  className={`nav-item link-ul font-regular tracking-[0.02em] text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-[3.8rem] py-2 sm:py-3 md:py-[16px] ${menuOpen ? 'show' : ''}`}
+                  className={`nav-item link-ul font-regular tracking-[0.02em] text-lg sm:text-2xl md:text-4xl lg:text-6xl xl:text-[3.8rem] py-1.5 sm:py-3 md:py-[16px] ${menuOpen ? 'show' : ''}`}
                   style={{
                     color: hoveredLink && hoveredLink !== link.label ? t.leftDimmed : t.leftText,
                     transitionDelay: menuOpen ? `${i * 60 + 90}ms` : '0ms',
@@ -275,27 +275,21 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
             ))}
           </nav>
 
-          <div className="px-4 sm:px-8 md:px-14 pb-6 sm:pb-8 text-[8px] sm:text-[9px] tracking-[0.3em] font-button-custom" style={{ color: t.leftFooter }}>
+          <div className="px-3 sm:px-8 md:px-14 pb-3 sm:pb-8 text-[7px] sm:text-[9px] tracking-[0.3em] font-button-custom" style={{ color: t.leftFooter }}>
             © 2025 ARCCA
           </div>
         </div>
 
         {/* ── RIGHT PANEL (Bottom on mobile, Right on desktop) ── */}
         <div
-          className={`absolute top-auto bottom-0 right-0 md:top-0 md:bottom-auto h-[40vh] md:h-full w-full md:w-[48%] flex flex-col panel-right ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
+          className={`absolute top-auto bottom-0 right-0 md:top-0 md:bottom-auto h-[30vh] md:h-full w-full md:w-[48%] flex flex-col panel-right ${menuOpen ? 'panel-open pointer-events-auto' : ''}`}
           style={{ background: t.rightBg }}
         >
           {/* Top bar */}
-          <div className="h-16 sm:h-[64px] md:h-[72px] shrink-0 flex items-center justify-between px-4 sm:px-8 md:px-12">
-            <span
-              className="font-display text-lg sm:text-xl tracking-[0.38em] font-light md:invisible"
-              style={{ color: t.rightLogo }}
-            >
-              ARCCA
-            </span>
+          <div className="h-16 sm:h-[64px] md:h-[72px] shrink-0 flex items-center justify-end px-4 sm:px-8 md:px-12">
             <button
               onClick={() => setMenuOpen(false)}
-              className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.28em] font-button-custom transition-colors duration-200 ml-auto"
+              className="text-lg sm:text-2xl md:text-xl tracking-[0.28em] font-button-custom transition-colors duration-200"
               style={{ color: t.rightClose }}
               onMouseEnter={e => (e.currentTarget.style.color = t.rightCloseHover)}
               onMouseLeave={e => (e.currentTarget.style.color = t.rightClose)}
@@ -304,21 +298,21 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
             </button>
           </div>
 
-          <div className="flex-1 flex flex-col justify-between px-4 sm:px-8 md:px-12 pb-6 sm:pb-8 md:pb-10 overflow-y-auto">
+          <div className="flex-1 flex flex-col justify-between px-3 sm:px-8 md:px-12 pb-3 sm:pb-8 md:pb-10 overflow-y-auto">
 
             {/* Wordmark */}
-            <div className="mt-4 sm:mt-6 md:mt-10">
+            <div className="mt-1 sm:mt-4 md:mt-8">
               <p
-                className="font-display font-light tracking-[0.14em] text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl leading-none"
+                className="font-display font-light tracking-[0.14em] text-lg sm:text-2xl md:text-5xl lg:text-7xl xl:text-8xl leading-none"
                 style={{ color: t.rightLogo }}
               >
                 ARCCA
               </p>
-              <p className="mt-0.5 sm:mt-1 text-[8px] sm:text-[9px] tracking-[0.22em] font-button-custom" style={{ color: t.rightLabel }}>®</p>
+              <p className="mt-0 sm:mt-0.5 md:mt-1 text-[7px] sm:text-[9px] md:text-[9px] tracking-[0.22em] font-button-custom" style={{ color: t.rightLabel }}>®</p>
             </div>
 
             {/* Contact grid */}
-            <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-7">
+            <div className="mt-2 sm:mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 md:gap-6">
 
               {[
                 {
@@ -326,7 +320,7 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   content: (
                     <a
                       href={`mailto:${CONTACT_INFO.email.toLowerCase()}`}
-                      className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.14em] font-body transition-colors duration-200 block"
+                      className="text-[8px] sm:text-[10px] md:text-[11px] tracking-[0.12em] font-body transition-colors duration-200 block leading-tight"
                       style={{ color: t.rightText }}
                       onMouseEnter={e => (e.currentTarget.style.color = t.rightLabel)}
                       onMouseLeave={e => (e.currentTarget.style.color = t.rightText)}
@@ -336,24 +330,11 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                   ),
                 },
                 {
-                  label: 'ADDRESS',
-                  content: (
-                    <>
-                      <p className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.1em] leading-relaxed font-body-custom" style={{ color: t.rightText }}>
-                        {CONTACT_INFO.address}
-                      </p>
-                      <p className="mt-1.5 sm:mt-2 md:mt-2.5 text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.1em] font-body-custom" style={{ color: t.rightMuted }}>
-                        {CONTACT_INFO.hours}
-                      </p>
-                    </>
-                  ),
-                },
-                {
                   label: 'PHONE',
                   content: (
                     <a
                       href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}
-                      className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.14em] font-body transition-colors duration-200 block"
+                      className="text-[8px] sm:text-[10px] md:text-[11px] tracking-[0.12em] font-body transition-colors duration-200 block leading-tight"
                       style={{ color: t.rightText }}
                       onMouseEnter={e => (e.currentTarget.style.color = t.rightLabel)}
                       onMouseLeave={e => (e.currentTarget.style.color = t.rightText)}
@@ -362,28 +343,9 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
                     </a>
                   ),
                 },
-                {
-                  label: 'SOCIAL',
-                  content: (
-                    <div className="flex flex-col gap-1 sm:gap-1.5">
-                      {CONTACT_INFO.social.map(s => (
-                        <a
-                          key={s}
-                          href="#"
-                          className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.14em] font-body transition-colors duration-200"
-                          style={{ color: t.rightText }}
-                          onMouseEnter={e => (e.currentTarget.style.color = t.rightLabel)}
-                          onMouseLeave={e => (e.currentTarget.style.color = t.rightText)}
-                        >
-                          {s}
-                        </a>
-                      ))}
-                    </div>
-                  ),
-                },
               ].map(({ label, content }) => (
                 <div key={label}>
-                  <p className="text-[9px] tracking-[0.32em] mb-2.5 font-button-custom" style={{ color: t.rightLabel }}>
+                  <p className="text-[7px] sm:text-[8px] md:text-[9px] tracking-[0.28em] mb-1 font-button-custom" style={{ color: t.rightLabel }}>
                     {label}
                   </p>
                   {content}
@@ -394,19 +356,19 @@ export default function Navbar({ theme = 'dark' }: NavbarProps) {
 
             {/* Footer */}
             <div>
-              <div className="h-px my-7" style={{ background: t.rightDivider }} />
-              <div className="flex justify-between items-center">
+              <div className="h-px my-2 sm:my-4 md:my-6" style={{ background: t.rightDivider }} />
+              <div className="flex justify-between items-center gap-1">
                 <a
                   href="#"
-                  className="text-[9px] tracking-[0.25em] font-button-custom transition-colors duration-200"
+                  className="text-[7px] sm:text-[8px] md:text-[9px] tracking-[0.2em] font-button-custom transition-colors duration-200"
                   style={{ color: t.rightMuted }}
                   onMouseEnter={e => (e.currentTarget.style.color = t.rightLabel)}
                   onMouseLeave={e => (e.currentTarget.style.color = t.rightMuted)}
                 >
-                  PRIVACY POLICY
+                  PRIVACY
                 </a>
-                <p className="text-[9px] tracking-[0.2em] font-body-custom" style={{ color: t.rightMuted }}>
-                  © 2025 ARCCA
+                <p className="text-[7px] sm:text-[8px] md:text-[9px] tracking-[0.15em] font-body-custom" style={{ color: t.rightMuted }}>
+                  © 2025
                 </p>
               </div>
             </div>
